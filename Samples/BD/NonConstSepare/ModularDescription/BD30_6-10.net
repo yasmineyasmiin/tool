@@ -1,0 +1,305 @@
+#place Idle5 mk(<..>)
+#place Wait5
+#place Update5
+#place Mess5
+#place Ack5
+#place Idle6 mk(<..>)
+#place Wait6
+#place Update6
+#place Mess6
+#place Ack6
+#place Idle7 mk(<..>)
+#place Wait7
+#place Update7
+#place Mess7
+#place Ack7
+#place Idle8 mk(<..>)
+#place Wait8
+#place Update8
+#place Mess8
+#place Ack8
+#place Idle9 mk(<..>)
+#place Wait9
+#place Update9
+#place Mess9
+#place Ack9
+#trans T1_0
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_0
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_1
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_1
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_2
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_2
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_3
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_3
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_4
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_4
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_5
+in {Idle5:<..>;}
+out {Wait5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_5
+in {Wait5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {Idle5:<..>;}
+#endtr
+#trans T3_5
+in {Idle5:<..>;Mess5:<..>;}
+out {Update5:<..>;}
+#endtr
+#trans T4_5
+in {Update5:<..>;}
+out {Idle5:<..>;Ack5:<..>;}
+#endtr
+#trans T1_6
+in {Idle6:<..>;}
+out {Wait6:<..>;Mess5:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_6
+in {Wait6:<..>;Ack5:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {Idle6:<..>;}
+#endtr
+#trans T3_6
+in {Idle6:<..>;Mess6:<..>;}
+out {Update6:<..>;}
+#endtr
+#trans T4_6
+in {Update6:<..>;}
+out {Idle6:<..>;Ack6:<..>;}
+#endtr
+#trans T1_7
+in {Idle7:<..>;}
+out {Wait7:<..>;Mess5:<..>;Mess6:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_7
+in {Wait7:<..>;Ack5:<..>;Ack6:<..>;Ack8:<..>;Ack9:<..>;}
+out {Idle7:<..>;}
+#endtr
+#trans T3_7
+in {Idle7:<..>;Mess7:<..>;}
+out {Update7:<..>;}
+#endtr
+#trans T4_7
+in {Update7:<..>;}
+out {Idle7:<..>;Ack7:<..>;}
+#endtr
+#trans T1_8
+in {Idle8:<..>;}
+out {Wait8:<..>;Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess9:<..>;}
+#endtr
+#trans T2_8
+in {Wait8:<..>;Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack9:<..>;}
+out {Idle8:<..>;}
+#endtr
+#trans T3_8
+in {Idle8:<..>;Mess8:<..>;}
+out {Update8:<..>;}
+#endtr
+#trans T4_8
+in {Update8:<..>;}
+out {Idle8:<..>;Ack8:<..>;}
+#endtr
+#trans T1_9
+in {Idle9:<..>;}
+out {Wait9:<..>;Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;}
+#endtr
+#trans T2_9
+in {Wait9:<..>;Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;}
+out {Idle9:<..>;}
+#endtr
+#trans T3_9
+in {Idle9:<..>;Mess9:<..>;}
+out {Update9:<..>;}
+#endtr
+#trans T4_9
+in {Update9:<..>;}
+out {Idle9:<..>;Ack9:<..>;}
+#endtr
+#trans T1_10
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_10
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_11
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_11
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_12
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_12
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_13
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_13
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_14
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_14
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_15
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_15
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_16
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_16
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_17
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_17
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_18
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_18
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_19
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_19
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_20
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_20
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_21
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_21
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_22
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_22
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_23
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_23
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_24
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_24
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_25
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_25
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_26
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_26
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_27
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_27
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_28
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_28
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr
+#trans T1_29
+in {}
+out {Mess5:<..>;Mess6:<..>;Mess7:<..>;Mess8:<..>;Mess9:<..>;}
+#endtr
+#trans T2_29
+in {Ack5:<..>;Ack6:<..>;Ack7:<..>;Ack8:<..>;Ack9:<..>;}
+out {}
+#endtr

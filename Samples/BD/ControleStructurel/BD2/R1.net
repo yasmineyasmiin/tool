@@ -1,0 +1,41 @@
+#place Mutex  mk(<..>)
+#place Idle0 mk(<..>)
+#place Wait0
+#place Update0
+#place Mess0
+#place Ack0
+#place Update1
+#place Mess1
+#place Ack1
+#trans T1_0
+in {Idle0:<..>;Mutex:<..>;}
+out {Wait0:<..>;Mess1:<..>;}
+#endtr
+#trans T2_0
+in {Wait0:<..>;Ack1:<..>;}
+out {Idle0:<..>;Mutex:<..>;}
+#endtr
+#trans T3_0
+in {Idle0:<..>;Mess0:<..>;}
+out {Update0:<..>;}
+#endtr
+#trans T4_0
+in {Update0:<..>;}
+out {Idle0:<..>;Ack0:<..>;}
+#endtr
+#trans T1_1
+in {Mutex:<..>;}
+out {Mess0:<..>;}
+#endtr
+#trans T2_1
+in {Ack0:<..>;}
+out {Mutex:<..>;}
+#endtr
+#trans T3_1
+in {Mess1:<..>;}
+out {Update1:<..>;}
+#endtr
+#trans T4_1
+in {Update1:<..>;}
+out {Ack1:<..>;}
+#endtr

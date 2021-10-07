@@ -1,0 +1,208 @@
+#place C5 mk(<..>)
+#place E5
+#place A5 mk(<..>)
+#place B5
+#place D5
+#place F5
+#place G5
+#place H5
+#place C6 mk(<..>)
+#place E6
+#place A6 mk(<..>)
+#place B6
+#place D6
+#place F6
+#place G6
+#place H6
+#place C7 mk(<..>)
+#place E7
+#place A7 mk(<..>)
+#place B7
+#place D7
+#place F7
+#place G7
+#place H7
+#place C8 mk(<..>)
+#place E8
+#place A8 mk(<..>)
+#place B8
+#place D8
+#place F8
+#place G8
+#place H8
+#place C9 mk(<..>)
+#place E9
+#place A9 mk(<..>)
+#place B9
+#place D9
+#place F9
+#place G9
+#place H9
+#trans Free0
+in {C9:<..>;}
+out {E9:<..>;}
+#endtr
+#trans Used0
+in {C9:<..>;}
+out {D9:<..>;}
+#endtr
+#trans Free5
+in {A5:<..>;}
+out {B5:<..>;}
+#endtr
+#trans Used5
+in {H5:<..>;}
+out {B5:<..>;}
+#endtr
+#trans Get5
+in {F5:<..>;B5:<..>;}
+out {C5:<..>;A5:<..>;}
+#endtr
+#trans Put5
+in {B5:<..>;G5:<..>;}
+out {C5:<..>;H5:<..>;}
+#endtr
+#trans Other5
+in {D5:<..>;}
+out {G5:<..>;}
+#endtr
+#trans Owner5
+in {D5:<..>;}
+out {E5:<..>;}
+#endtr
+#trans GoOn5
+in {E5:<..>;}
+out {F5:<..>;}
+#endtr
+#trans Write5
+in {E5:<..>;}
+out {G5:<..>;}
+#endtr
+#trans Free6
+in {A6:<..>;C5:<..>;}
+out {B6:<..>;E5:<..>;}
+#endtr
+#trans Used6
+in {H6:<..>;C5:<..>;}
+out {B6:<..>;D5:<..>;}
+#endtr
+#trans Get6
+in {F6:<..>;B6:<..>;}
+out {C6:<..>;A6:<..>;}
+#endtr
+#trans Put6
+in {B6:<..>;G6:<..>;}
+out {C6:<..>;H6:<..>;}
+#endtr
+#trans Other6
+in {D6:<..>;}
+out {G6:<..>;}
+#endtr
+#trans Owner6
+in {D6:<..>;}
+out {E6:<..>;}
+#endtr
+#trans GoOn6
+in {E6:<..>;}
+out {F6:<..>;}
+#endtr
+#trans Write6
+in {E6:<..>;}
+out {G6:<..>;}
+#endtr
+#trans Free7
+in {A7:<..>;C6:<..>;}
+out {B7:<..>;E6:<..>;}
+#endtr
+#trans Used7
+in {H7:<..>;C6:<..>;}
+out {B7:<..>;D6:<..>;}
+#endtr
+#trans Get7
+in {F7:<..>;B7:<..>;}
+out {C7:<..>;A7:<..>;}
+#endtr
+#trans Put7
+in {B7:<..>;G7:<..>;}
+out {C7:<..>;H7:<..>;}
+#endtr
+#trans Other7
+in {D7:<..>;}
+out {G7:<..>;}
+#endtr
+#trans Owner7
+in {D7:<..>;}
+out {E7:<..>;}
+#endtr
+#trans GoOn7
+in {E7:<..>;}
+out {F7:<..>;}
+#endtr
+#trans Write7
+in {E7:<..>;}
+out {G7:<..>;}
+#endtr
+#trans Free8
+in {A8:<..>;C7:<..>;}
+out {B8:<..>;E7:<..>;}
+#endtr
+#trans Used8
+in {H8:<..>;C7:<..>;}
+out {B8:<..>;D7:<..>;}
+#endtr
+#trans Get8
+in {F8:<..>;B8:<..>;}
+out {C8:<..>;A8:<..>;}
+#endtr
+#trans Put8
+in {B8:<..>;G8:<..>;}
+out {C8:<..>;H8:<..>;}
+#endtr
+#trans Other8
+in {D8:<..>;}
+out {G8:<..>;}
+#endtr
+#trans Owner8
+in {D8:<..>;}
+out {E8:<..>;}
+#endtr
+#trans GoOn8
+in {E8:<..>;}
+out {F8:<..>;}
+#endtr
+#trans Write8
+in {E8:<..>;}
+out {G8:<..>;}
+#endtr
+#trans Free9
+in {A9:<..>;C8:<..>;}
+out {B9:<..>;E8:<..>;}
+#endtr
+#trans Used9
+in {H9:<..>;C8:<..>;}
+out {B9:<..>;D8:<..>;}
+#endtr
+#trans Get9
+in {F9:<..>;B9:<..>;}
+out {C9:<..>;A9:<..>;}
+#endtr
+#trans Put9
+in {B9:<..>;G9:<..>;}
+out {C9:<..>;H9:<..>;}
+#endtr
+#trans Other9
+in {D9:<..>;}
+out {G9:<..>;}
+#endtr
+#trans Owner9
+in {D9:<..>;}
+out {E9:<..>;}
+#endtr
+#trans GoOn9
+in {E9:<..>;}
+out {F9:<..>;}
+#endtr
+#trans Write9
+in {E9:<..>;}
+out {G9:<..>;}
+#endtr

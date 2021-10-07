@@ -1,0 +1,89 @@
+#place Idle24 mk(<..>)
+#place WaitLeft24
+#place HasLeft24
+#place WaitRight24
+#place HasRight24
+#place Fork24 mk(<..>)
+#place IsEating24
+#place Idle25 mk(<..>)
+#place WaitLeft25
+#place HasLeft25
+#place WaitRight25
+#place HasRight25
+#place Fork25 mk(<..>)
+#place IsEating25
+#place Idle26 mk(<..>)
+#place WaitLeft26
+#place HasLeft26
+#place WaitRight26
+#place HasRight26
+#place Fork26 mk(<..>)
+#place IsEating26
+#trans GoEat24
+in {Idle24:<..>;}
+out {WaitLeft24:<..>;WaitRight24:<..>;}
+#endtr
+#trans GoLeft24
+in {WaitLeft24:<..>;}
+out {HasLeft24:<..>;}
+#endtr
+#trans GoRight24
+in {Fork24:<..>;WaitRight24:<..>;}
+out {HasRight24:<..>;}
+#endtr
+#trans Eat24
+in {HasLeft24:<..>;HasRight24:<..>;}
+out {IsEating24:<..>;}
+#endtr
+#trans Release24
+in {IsEating24:<..>;}
+out {Idle24:<..>;Fork24:<..>;}
+#endtr
+#trans GoEat25
+in {Idle25:<..>;}
+out {WaitLeft25:<..>;WaitRight25:<..>;}
+#endtr
+#trans GoLeft25
+in {Fork24:<..>;WaitLeft25:<..>;}
+out {HasLeft25:<..>;}
+#endtr
+#trans GoRight25
+in {Fork25:<..>;WaitRight25:<..>;}
+out {HasRight25:<..>;}
+#endtr
+#trans Eat25
+in {HasLeft25:<..>;HasRight25:<..>;}
+out {IsEating25:<..>;}
+#endtr
+#trans Release25
+in {IsEating25:<..>;}
+out {Idle25:<..>;Fork24:<..>;Fork25:<..>;}
+#endtr
+#trans GoEat26
+in {Idle26:<..>;}
+out {WaitLeft26:<..>;WaitRight26:<..>;}
+#endtr
+#trans GoLeft26
+in {Fork25:<..>;WaitLeft26:<..>;}
+out {HasLeft26:<..>;}
+#endtr
+#trans GoRight26
+in {Fork26:<..>;WaitRight26:<..>;}
+out {HasRight26:<..>;}
+#endtr
+#trans Eat26
+in {HasLeft26:<..>;HasRight26:<..>;}
+out {IsEating26:<..>;}
+#endtr
+#trans Release26
+in {IsEating26:<..>;}
+out {Idle26:<..>;Fork25:<..>;Fork26:<..>;}
+#endtr
+#trans GoLeft27
+in {Fork26:<..>;}
+out {}
+#endtr
+#trans Release27
+in {}
+out {Fork26:<..>;}
+#endtr

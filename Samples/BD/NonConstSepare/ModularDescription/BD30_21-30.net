@@ -1,0 +1,370 @@
+#place Idle20 mk(<..>)
+#place Wait20
+#place Update20
+#place Mess20
+#place Ack20
+#place Idle21 mk(<..>)
+#place Wait21
+#place Update21
+#place Mess21
+#place Ack21
+#place Idle22 mk(<..>)
+#place Wait22
+#place Update22
+#place Mess22
+#place Ack22
+#place Idle23 mk(<..>)
+#place Wait23
+#place Update23
+#place Mess23
+#place Ack23
+#place Idle24 mk(<..>)
+#place Wait24
+#place Update24
+#place Mess24
+#place Ack24
+#place Idle25 mk(<..>)
+#place Wait25
+#place Update25
+#place Mess25
+#place Ack25
+#place Idle26 mk(<..>)
+#place Wait26
+#place Update26
+#place Mess26
+#place Ack26
+#place Idle27 mk(<..>)
+#place Wait27
+#place Update27
+#place Mess27
+#place Ack27
+#place Idle28 mk(<..>)
+#place Wait28
+#place Update28
+#place Mess28
+#place Ack28
+#place Idle29 mk(<..>)
+#place Wait29
+#place Update29
+#place Mess29
+#place Ack29
+#trans T1_0
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_0
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_1
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_1
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_2
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_2
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_3
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_3
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_4
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_4
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_5
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_5
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_6
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_6
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_7
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_7
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_8
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_8
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_9
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_9
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_10
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_10
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_11
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_11
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_12
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_12
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_13
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_13
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_14
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_14
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_15
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_15
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_16
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_16
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_17
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_17
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_18
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_18
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_19
+in {}
+out {Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_19
+in {Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {}
+#endtr
+#trans T1_20
+in {Idle20:<..>;}
+out {Wait20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_20
+in {Wait20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {Idle20:<..>;}
+#endtr
+#trans T3_20
+in {Idle20:<..>;Mess20:<..>;}
+out {Update20:<..>;}
+#endtr
+#trans T4_20
+in {Update20:<..>;}
+out {Idle20:<..>;Ack20:<..>;}
+#endtr
+#trans T1_21
+in {Idle21:<..>;}
+out {Wait21:<..>;Mess20:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_21
+in {Wait21:<..>;Ack20:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {Idle21:<..>;}
+#endtr
+#trans T3_21
+in {Idle21:<..>;Mess21:<..>;}
+out {Update21:<..>;}
+#endtr
+#trans T4_21
+in {Update21:<..>;}
+out {Idle21:<..>;Ack21:<..>;}
+#endtr
+#trans T1_22
+in {Idle22:<..>;}
+out {Wait22:<..>;Mess20:<..>;Mess21:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_22
+in {Wait22:<..>;Ack20:<..>;Ack21:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {Idle22:<..>;}
+#endtr
+#trans T3_22
+in {Idle22:<..>;Mess22:<..>;}
+out {Update22:<..>;}
+#endtr
+#trans T4_22
+in {Update22:<..>;}
+out {Idle22:<..>;Ack22:<..>;}
+#endtr
+#trans T1_23
+in {Idle23:<..>;}
+out {Wait23:<..>;Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_23
+in {Wait23:<..>;Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {Idle23:<..>;}
+#endtr
+#trans T3_23
+in {Idle23:<..>;Mess23:<..>;}
+out {Update23:<..>;}
+#endtr
+#trans T4_23
+in {Update23:<..>;}
+out {Idle23:<..>;Ack23:<..>;}
+#endtr
+#trans T1_24
+in {Idle24:<..>;}
+out {Wait24:<..>;Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_24
+in {Wait24:<..>;Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {Idle24:<..>;}
+#endtr
+#trans T3_24
+in {Idle24:<..>;Mess24:<..>;}
+out {Update24:<..>;}
+#endtr
+#trans T4_24
+in {Update24:<..>;}
+out {Idle24:<..>;Ack24:<..>;}
+#endtr
+#trans T1_25
+in {Idle25:<..>;}
+out {Wait25:<..>;Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_25
+in {Wait25:<..>;Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {Idle25:<..>;}
+#endtr
+#trans T3_25
+in {Idle25:<..>;Mess25:<..>;}
+out {Update25:<..>;}
+#endtr
+#trans T4_25
+in {Update25:<..>;}
+out {Idle25:<..>;Ack25:<..>;}
+#endtr
+#trans T1_26
+in {Idle26:<..>;}
+out {Wait26:<..>;Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess27:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_26
+in {Wait26:<..>;Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack27:<..>;Ack28:<..>;Ack29:<..>;}
+out {Idle26:<..>;}
+#endtr
+#trans T3_26
+in {Idle26:<..>;Mess26:<..>;}
+out {Update26:<..>;}
+#endtr
+#trans T4_26
+in {Update26:<..>;}
+out {Idle26:<..>;Ack26:<..>;}
+#endtr
+#trans T1_27
+in {Idle27:<..>;}
+out {Wait27:<..>;Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess28:<..>;Mess29:<..>;}
+#endtr
+#trans T2_27
+in {Wait27:<..>;Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack28:<..>;Ack29:<..>;}
+out {Idle27:<..>;}
+#endtr
+#trans T3_27
+in {Idle27:<..>;Mess27:<..>;}
+out {Update27:<..>;}
+#endtr
+#trans T4_27
+in {Update27:<..>;}
+out {Idle27:<..>;Ack27:<..>;}
+#endtr
+#trans T1_28
+in {Idle28:<..>;}
+out {Wait28:<..>;Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess29:<..>;}
+#endtr
+#trans T2_28
+in {Wait28:<..>;Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack29:<..>;}
+out {Idle28:<..>;}
+#endtr
+#trans T3_28
+in {Idle28:<..>;Mess28:<..>;}
+out {Update28:<..>;}
+#endtr
+#trans T4_28
+in {Update28:<..>;}
+out {Idle28:<..>;Ack28:<..>;}
+#endtr
+#trans T1_29
+in {Idle29:<..>;}
+out {Wait29:<..>;Mess20:<..>;Mess21:<..>;Mess22:<..>;Mess23:<..>;Mess24:<..>;Mess25:<..>;Mess26:<..>;Mess27:<..>;Mess28:<..>;}
+#endtr
+#trans T2_29
+in {Wait29:<..>;Ack20:<..>;Ack21:<..>;Ack22:<..>;Ack23:<..>;Ack24:<..>;Ack25:<..>;Ack26:<..>;Ack27:<..>;Ack28:<..>;}
+out {Idle29:<..>;}
+#endtr
+#trans T3_29
+in {Idle29:<..>;Mess29:<..>;}
+out {Update29:<..>;}
+#endtr
+#trans T4_29
+in {Update29:<..>;}
+out {Idle29:<..>;Ack29:<..>;}
+#endtr

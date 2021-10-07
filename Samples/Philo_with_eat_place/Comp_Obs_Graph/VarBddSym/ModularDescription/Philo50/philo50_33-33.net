@@ -1,0 +1,35 @@
+#place Idle32 mk(<..>)
+#place WaitLeft32
+#place HasLeft32
+#place WaitRight32
+#place HasRight32
+#place Fork32 mk(<..>)
+#place IsEating32
+#trans GoEat32
+in {Idle32:<..>;}
+out {WaitLeft32:<..>;WaitRight32:<..>;}
+#endtr
+#trans GoLeft32
+in {WaitLeft32:<..>;}
+out {HasLeft32:<..>;}
+#endtr
+#trans GoRight32
+in {Fork32:<..>;WaitRight32:<..>;}
+out {HasRight32:<..>;}
+#endtr
+#trans Eat32
+in {HasLeft32:<..>;HasRight32:<..>;}
+out {IsEating32:<..>;}
+#endtr
+#trans Release32
+in {IsEating32:<..>;}
+out {Idle32:<..>;Fork32:<..>;}
+#endtr
+#trans GoLeft33
+in {Fork32:<..>;}
+out {}
+#endtr
+#trans Release33
+in {}
+out {Fork32:<..>;}
+#endtr

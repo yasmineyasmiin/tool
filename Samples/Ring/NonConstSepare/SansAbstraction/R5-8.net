@@ -1,0 +1,168 @@
+#place C4 mk(<..>)
+#place E4
+#place A4 mk(<..>)
+#place B4
+#place D4
+#place F4
+#place G4
+#place H4
+#place C5 mk(<..>)
+#place E5
+#place A5 mk(<..>)
+#place B5
+#place D5
+#place F5
+#place G5
+#place H5
+#place C6 mk(<..>)
+#place E6
+#place A6 mk(<..>)
+#place B6
+#place D6
+#place F6
+#place G6
+#place H6
+#place C7 mk(<..>)
+#place E7
+#place A7 mk(<..>)
+#place B7
+#place D7
+#place F7
+#place G7
+#place H7
+#trans Free0
+in {C7:<..>;}
+out {E7:<..>;}
+#endtr
+#trans Used0
+in {C7:<..>;}
+out {D7:<..>;}
+#endtr
+#trans Free4
+in {A4:<..>;}
+out {B4:<..>;}
+#endtr
+#trans Used4
+in {H4:<..>;}
+out {B4:<..>;}
+#endtr
+#trans Get4
+in {F4:<..>;B4:<..>;}
+out {C4:<..>;A4:<..>;}
+#endtr
+#trans Put4
+in {B4:<..>;G4:<..>;}
+out {C4:<..>;H4:<..>;}
+#endtr
+#trans Other4
+in {D4:<..>;}
+out {G4:<..>;}
+#endtr
+#trans Owner4
+in {D4:<..>;}
+out {E4:<..>;}
+#endtr
+#trans GoOn4
+in {E4:<..>;}
+out {F4:<..>;}
+#endtr
+#trans Write4
+in {E4:<..>;}
+out {G4:<..>;}
+#endtr
+#trans Free5
+in {A5:<..>;C4:<..>;}
+out {B5:<..>;E4:<..>;}
+#endtr
+#trans Used5
+in {H5:<..>;C4:<..>;}
+out {B5:<..>;D4:<..>;}
+#endtr
+#trans Get5
+in {F5:<..>;B5:<..>;}
+out {C5:<..>;A5:<..>;}
+#endtr
+#trans Put5
+in {B5:<..>;G5:<..>;}
+out {C5:<..>;H5:<..>;}
+#endtr
+#trans Other5
+in {D5:<..>;}
+out {G5:<..>;}
+#endtr
+#trans Owner5
+in {D5:<..>;}
+out {E5:<..>;}
+#endtr
+#trans GoOn5
+in {E5:<..>;}
+out {F5:<..>;}
+#endtr
+#trans Write5
+in {E5:<..>;}
+out {G5:<..>;}
+#endtr
+#trans Free6
+in {A6:<..>;C5:<..>;}
+out {B6:<..>;E5:<..>;}
+#endtr
+#trans Used6
+in {H6:<..>;C5:<..>;}
+out {B6:<..>;D5:<..>;}
+#endtr
+#trans Get6
+in {F6:<..>;B6:<..>;}
+out {C6:<..>;A6:<..>;}
+#endtr
+#trans Put6
+in {B6:<..>;G6:<..>;}
+out {C6:<..>;H6:<..>;}
+#endtr
+#trans Other6
+in {D6:<..>;}
+out {G6:<..>;}
+#endtr
+#trans Owner6
+in {D6:<..>;}
+out {E6:<..>;}
+#endtr
+#trans GoOn6
+in {E6:<..>;}
+out {F6:<..>;}
+#endtr
+#trans Write6
+in {E6:<..>;}
+out {G6:<..>;}
+#endtr
+#trans Free7
+in {A7:<..>;C6:<..>;}
+out {B7:<..>;E6:<..>;}
+#endtr
+#trans Used7
+in {H7:<..>;C6:<..>;}
+out {B7:<..>;D6:<..>;}
+#endtr
+#trans Get7
+in {F7:<..>;B7:<..>;}
+out {C7:<..>;A7:<..>;}
+#endtr
+#trans Put7
+in {B7:<..>;G7:<..>;}
+out {C7:<..>;H7:<..>;}
+#endtr
+#trans Other7
+in {D7:<..>;}
+out {G7:<..>;}
+#endtr
+#trans Owner7
+in {D7:<..>;}
+out {E7:<..>;}
+#endtr
+#trans GoOn7
+in {E7:<..>;}
+out {F7:<..>;}
+#endtr
+#trans Write7
+in {E7:<..>;}
+out {G7:<..>;}
+#endtr

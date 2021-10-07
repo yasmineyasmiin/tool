@@ -1,0 +1,88 @@
+#place C4 mk(<..>)
+#place E4
+#place A4 mk(<..>)
+#place B4
+#place D4
+#place F4
+#place G4
+#place H4
+#place C5 mk(<..>)
+#place E5
+#place A5 mk(<..>)
+#place B5
+#place D5
+#place F5
+#place G5
+#place H5
+#trans Free4
+in {A4:<..>;}
+out {B4:<..>;}
+#endtr
+#trans Used4
+in {H4:<..>;}
+out {B4:<..>;}
+#endtr
+#trans Get4
+in {F4:<..>;B4:<..>;}
+out {C4:<..>;A4:<..>;}
+#endtr
+#trans Put4
+in {B4:<..>;G4:<..>;}
+out {C4:<..>;H4:<..>;}
+#endtr
+#trans Other4
+in {D4:<..>;}
+out {G4:<..>;}
+#endtr
+#trans Owner4
+in {D4:<..>;}
+out {E4:<..>;}
+#endtr
+#trans GoOn4
+in {E4:<..>;}
+out {F4:<..>;}
+#endtr
+#trans Write4
+in {E4:<..>;}
+out {G4:<..>;}
+#endtr
+#trans Free5
+in {A5:<..>;C4:<..>;}
+out {B5:<..>;E4:<..>;}
+#endtr
+#trans Used5
+in {H5:<..>;C4:<..>;}
+out {B5:<..>;D4:<..>;}
+#endtr
+#trans Get5
+in {F5:<..>;B5:<..>;}
+out {C5:<..>;A5:<..>;}
+#endtr
+#trans Put5
+in {B5:<..>;G5:<..>;}
+out {C5:<..>;H5:<..>;}
+#endtr
+#trans Other5
+in {D5:<..>;}
+out {G5:<..>;}
+#endtr
+#trans Owner5
+in {D5:<..>;}
+out {E5:<..>;}
+#endtr
+#trans GoOn5
+in {E5:<..>;}
+out {F5:<..>;}
+#endtr
+#trans Write5
+in {E5:<..>;}
+out {G5:<..>;}
+#endtr
+#trans Free6
+in {C5:<..>;}
+out {E5:<..>;}
+#endtr
+#trans Used6
+in {C5:<..>;}
+out {D5:<..>;}
+#endtr

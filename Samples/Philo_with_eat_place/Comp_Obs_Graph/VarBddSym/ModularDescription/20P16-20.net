@@ -1,0 +1,143 @@
+#place Idle15 mk(<..>)
+#place WaitLeft15
+#place HasLeft15
+#place WaitRight15
+#place HasRight15
+#place Fork15 mk(<..>)
+#place IsEating15
+#place Idle16 mk(<..>)
+#place WaitLeft16
+#place HasLeft16
+#place WaitRight16
+#place HasRight16
+#place Fork16 mk(<..>)
+#place IsEating16
+#place Idle17 mk(<..>)
+#place WaitLeft17
+#place HasLeft17
+#place WaitRight17
+#place HasRight17
+#place Fork17 mk(<..>)
+#place IsEating17
+#place Idle18 mk(<..>)
+#place WaitLeft18
+#place HasLeft18
+#place WaitRight18
+#place HasRight18
+#place Fork18 mk(<..>)
+#place IsEating18
+#place Idle19 mk(<..>)
+#place WaitLeft19
+#place HasLeft19
+#place WaitRight19
+#place HasRight19
+#place Fork19 mk(<..>)
+#place IsEating19
+#trans GoLeft0
+in {Fork19:<..>;}
+out {}
+#endtr
+#trans Release0
+in {}
+out {Fork19:<..>;}
+#endtr
+#trans GoEat15
+in {Idle15:<..>;}
+out {WaitLeft15:<..>;WaitRight15:<..>;}
+#endtr
+#trans GoLeft15
+in {WaitLeft15:<..>;}
+out {HasLeft15:<..>;}
+#endtr
+#trans GoRight15
+in {Fork15:<..>;WaitRight15:<..>;}
+out {HasRight15:<..>;}
+#endtr
+#trans Eat15
+in {HasLeft15:<..>;HasRight15:<..>;}
+out {IsEating15:<..>;}
+#endtr
+#trans Release15
+in {IsEating15:<..>;}
+out {Idle15:<..>;Fork15:<..>;}
+#endtr
+#trans GoEat16
+in {Idle16:<..>;}
+out {WaitLeft16:<..>;WaitRight16:<..>;}
+#endtr
+#trans GoLeft16
+in {Fork15:<..>;WaitLeft16:<..>;}
+out {HasLeft16:<..>;}
+#endtr
+#trans GoRight16
+in {Fork16:<..>;WaitRight16:<..>;}
+out {HasRight16:<..>;}
+#endtr
+#trans Eat16
+in {HasLeft16:<..>;HasRight16:<..>;}
+out {IsEating16:<..>;}
+#endtr
+#trans Release16
+in {IsEating16:<..>;}
+out {Idle16:<..>;Fork15:<..>;Fork16:<..>;}
+#endtr
+#trans GoEat17
+in {Idle17:<..>;}
+out {WaitLeft17:<..>;WaitRight17:<..>;}
+#endtr
+#trans GoLeft17
+in {Fork16:<..>;WaitLeft17:<..>;}
+out {HasLeft17:<..>;}
+#endtr
+#trans GoRight17
+in {Fork17:<..>;WaitRight17:<..>;}
+out {HasRight17:<..>;}
+#endtr
+#trans Eat17
+in {HasLeft17:<..>;HasRight17:<..>;}
+out {IsEating17:<..>;}
+#endtr
+#trans Release17
+in {IsEating17:<..>;}
+out {Idle17:<..>;Fork16:<..>;Fork17:<..>;}
+#endtr
+#trans GoEat18
+in {Idle18:<..>;}
+out {WaitLeft18:<..>;WaitRight18:<..>;}
+#endtr
+#trans GoLeft18
+in {Fork17:<..>;WaitLeft18:<..>;}
+out {HasLeft18:<..>;}
+#endtr
+#trans GoRight18
+in {Fork18:<..>;WaitRight18:<..>;}
+out {HasRight18:<..>;}
+#endtr
+#trans Eat18
+in {HasLeft18:<..>;HasRight18:<..>;}
+out {IsEating18:<..>;}
+#endtr
+#trans Release18
+in {IsEating18:<..>;}
+out {Idle18:<..>;Fork17:<..>;Fork18:<..>;}
+#endtr
+#trans GoEat19
+in {Idle19:<..>;}
+out {WaitLeft19:<..>;WaitRight19:<..>;}
+#endtr
+#trans GoLeft19
+in {Fork18:<..>;WaitLeft19:<..>;}
+out {HasLeft19:<..>;}
+#endtr
+#trans GoRight19
+in {Fork19:<..>;WaitRight19:<..>;}
+out {HasRight19:<..>;}
+#endtr
+#trans Eat19
+in {HasLeft19:<..>;HasRight19:<..>;}
+out {IsEating19:<..>;}
+#endtr
+#trans Release19
+in {IsEating19:<..>;}
+out {Idle19:<..>;Fork18:<..>;Fork19:<..>;}
+#endtr

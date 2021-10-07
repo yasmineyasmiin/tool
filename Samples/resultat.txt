@@ -1,0 +1,45 @@
+% modele & parameter & nb states & nb DDD nodes & nb tree nodes & computation time
+
+% ordinary nets
+
+philo & 5 & 1364 & 127 & 11108 & 0.12 \\
+ & 10 & 1.86 \times 10^6 & 267 & 1.52 \times 10^7 & 0.68 \\
+ & 50 & & 2.23 \times 10^{31} & 1387 & 1.82 \times 10^{32} & 24.48 \\ \hline
+
+ring & 5 & 53856 & 350 & 507762 & 5.21 \\
+  & 10 & 8.29 \times 10^9 & 1281 & 8.07 \times 10^{10} & 136.37 \\ \hline
+
+
+fms & 5 & 2.89 \times 10^6 & 225 & 9.97 \times 10^6 & 0.76 \\
+ & 10 & 2.5 \times 10^9 & 580 & 8.02 \times 10^9 & 4.05 \\
+ & 20 & 6.03 \times 10^{12} & 1740 & 1.87  \times 10^{13} & 26.09 \\ \hline
+
+kanban & 5 & 2.55 \times 10^6 & 112 & 8.98 \times 10^6 & 2.6 \\
+ & 10 & 1.00593e+09 & 257 & 3.29661e+09 & 34.83 \\ \hline
+ 
+% inhibitor and capacity nets
+
+alternate bit & 5 & 14688 & 84 & 43804 & 1.89 \\
+ & 10 & 170368 & 84 & 480394 & 11.21 \\
+ & 20 & 2.23 \times 10^6 & 84 & 6.29 \times 10^6 & 94.66 \\ \hline
+
+% queuing nets
+
+alternate bit & 5 & 630 & 104 & 2008 & 0.21 \\
+ & 10 & 3355 & 164 & 10303 & 0.53 \\
+ & 20 & 21105 & 284 & 63943 & 1.57 \\
+ & 50 & 280755 & 644 & 845263 & 8.46 \\
+ & 100 & 2.12 \times 10^6 & 1244 & 6.37 \times 10^6 & 33.4 \\ \hline
+
+% self modifying nets
+
+prehemptif readers & 5 \times 5 & 873 & 120 & 6440 & 0.62 \\
+ & 10 \times 10 & 1.94 \times 10^6 & 485 & 1.46 \times 10^7 & 18.35 \\ 
+ & 15 \times 15 & 4.95 \times 10^9 & 1100 & 3.77 \times 10^{10} & 137.5 \\ \hline
+
+% inhibitor nets
+
+prehemptif readers & 5 \times 5 & 873 & 120 & 6440 & 0.72 \\
+ & 10 \times 10 & 1.94 \times 10^6 & 485 & 1.46 \times 10^7 & 24.35 \\ 
+ & 15 \times 15 & 4.95 \times 10^9 & 1100 & 3.77 \times 10^{10} & 211.9 \\ \hline
+

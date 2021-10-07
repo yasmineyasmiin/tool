@@ -1,0 +1,771 @@
+#place Idle mk(10*<..>)
+#place Read0
+#place Write0
+#place Test0 mk(<..>)
+#place Read1
+#place Write1
+#place Test1 mk(<..>)
+#place Read2
+#place Write2
+#place Test2 mk(<..>)
+#place Read3
+#place Write3
+#place Test3 mk(<..>)
+#place Read4
+#place Write4
+#place Test4 mk(<..>)
+#place Read5
+#place Write5
+#place Test5 mk(<..>)
+#place Read6
+#place Write6
+#place Test6 mk(<..>)
+#place Read7
+#place Write7
+#place Test7 mk(<..>)
+#place Read8
+#place Write8
+#place Test8 mk(<..>)
+#place Read9
+#place Write9
+#place Test9 mk(<..>)
+
+#trans t1_0
+in {Idle:<..>;Test0:<..>;}
+out {Read0:<..>;Test0:<..>;}
+#endtr
+
+#trans t2_0
+in {Read0:<..>;}
+out {Idle:<..>;}
+#endtr
+
+#trans t3_0_0
+in {Idle:<..>;Test0:<..>;Read0:0*<..>;Read0<1;}
+out {Write0:<..>;Idle:0*<..>;}
+#endtr
+
+
+#trans t3_0_1
+in {Idle:<..>;Test0:<..>;Read0:1*<..>;Read0<2;}
+out {Write0:<..>;Idle:1*<..>;}
+#endtr
+
+
+#trans t3_0_2
+in {Idle:<..>;Test0:<..>;Read0:2*<..>;Read0<3;}
+out {Write0:<..>;Idle:2*<..>;}
+#endtr
+
+
+#trans t3_0_3
+in {Idle:<..>;Test0:<..>;Read0:3*<..>;Read0<4;}
+out {Write0:<..>;Idle:3*<..>;}
+#endtr
+
+
+#trans t3_0_4
+in {Idle:<..>;Test0:<..>;Read0:4*<..>;Read0<5;}
+out {Write0:<..>;Idle:4*<..>;}
+#endtr
+
+
+#trans t3_0_5
+in {Idle:<..>;Test0:<..>;Read0:5*<..>;Read0<6;}
+out {Write0:<..>;Idle:5*<..>;}
+#endtr
+
+
+#trans t3_0_6
+in {Idle:<..>;Test0:<..>;Read0:6*<..>;Read0<7;}
+out {Write0:<..>;Idle:6*<..>;}
+#endtr
+
+
+#trans t3_0_7
+in {Idle:<..>;Test0:<..>;Read0:7*<..>;Read0<8;}
+out {Write0:<..>;Idle:7*<..>;}
+#endtr
+
+
+#trans t3_0_8
+in {Idle:<..>;Test0:<..>;Read0:8*<..>;Read0<9;}
+out {Write0:<..>;Idle:8*<..>;}
+#endtr
+
+
+#trans t3_0_9
+in {Idle:<..>;Test0:<..>;Read0:9*<..>;Read0<10;}
+out {Write0:<..>;Idle:9*<..>;}
+#endtr
+
+#trans t4_0
+in {Write0:<..>;}
+out {Idle:<..>;Test0:<..>;}
+#endtr
+
+#trans t1_1
+in {Idle:<..>;Test1:<..>;}
+out {Read1:<..>;Test1:<..>;}
+#endtr
+
+#trans t2_1
+in {Read1:<..>;}
+out {Idle:<..>;}
+#endtr
+
+#trans t3_1_0
+in {Idle:<..>;Test1:<..>;Read1:0*<..>;Read1<1;}
+out {Write1:<..>;Idle:0*<..>;}
+#endtr
+
+
+#trans t3_1_1
+in {Idle:<..>;Test1:<..>;Read1:1*<..>;Read1<2;}
+out {Write1:<..>;Idle:1*<..>;}
+#endtr
+
+
+#trans t3_1_2
+in {Idle:<..>;Test1:<..>;Read1:2*<..>;Read1<3;}
+out {Write1:<..>;Idle:2*<..>;}
+#endtr
+
+
+#trans t3_1_3
+in {Idle:<..>;Test1:<..>;Read1:3*<..>;Read1<4;}
+out {Write1:<..>;Idle:3*<..>;}
+#endtr
+
+
+#trans t3_1_4
+in {Idle:<..>;Test1:<..>;Read1:4*<..>;Read1<5;}
+out {Write1:<..>;Idle:4*<..>;}
+#endtr
+
+
+#trans t3_1_5
+in {Idle:<..>;Test1:<..>;Read1:5*<..>;Read1<6;}
+out {Write1:<..>;Idle:5*<..>;}
+#endtr
+
+
+#trans t3_1_6
+in {Idle:<..>;Test1:<..>;Read1:6*<..>;Read1<7;}
+out {Write1:<..>;Idle:6*<..>;}
+#endtr
+
+
+#trans t3_1_7
+in {Idle:<..>;Test1:<..>;Read1:7*<..>;Read1<8;}
+out {Write1:<..>;Idle:7*<..>;}
+#endtr
+
+
+#trans t3_1_8
+in {Idle:<..>;Test1:<..>;Read1:8*<..>;Read1<9;}
+out {Write1:<..>;Idle:8*<..>;}
+#endtr
+
+
+#trans t3_1_9
+in {Idle:<..>;Test1:<..>;Read1:9*<..>;Read1<10;}
+out {Write1:<..>;Idle:9*<..>;}
+#endtr
+
+#trans t4_1
+in {Write1:<..>;}
+out {Idle:<..>;Test1:<..>;}
+#endtr
+
+#trans t1_2
+in {Idle:<..>;Test2:<..>;}
+out {Read2:<..>;Test2:<..>;}
+#endtr
+
+#trans t2_2
+in {Read2:<..>;}
+out {Idle:<..>;}
+#endtr
+
+#trans t3_2_0
+in {Idle:<..>;Test2:<..>;Read2:0*<..>;Read2<1;}
+out {Write2:<..>;Idle:0*<..>;}
+#endtr
+
+
+#trans t3_2_1
+in {Idle:<..>;Test2:<..>;Read2:1*<..>;Read2<2;}
+out {Write2:<..>;Idle:1*<..>;}
+#endtr
+
+
+#trans t3_2_2
+in {Idle:<..>;Test2:<..>;Read2:2*<..>;Read2<3;}
+out {Write2:<..>;Idle:2*<..>;}
+#endtr
+
+
+#trans t3_2_3
+in {Idle:<..>;Test2:<..>;Read2:3*<..>;Read2<4;}
+out {Write2:<..>;Idle:3*<..>;}
+#endtr
+
+
+#trans t3_2_4
+in {Idle:<..>;Test2:<..>;Read2:4*<..>;Read2<5;}
+out {Write2:<..>;Idle:4*<..>;}
+#endtr
+
+
+#trans t3_2_5
+in {Idle:<..>;Test2:<..>;Read2:5*<..>;Read2<6;}
+out {Write2:<..>;Idle:5*<..>;}
+#endtr
+
+
+#trans t3_2_6
+in {Idle:<..>;Test2:<..>;Read2:6*<..>;Read2<7;}
+out {Write2:<..>;Idle:6*<..>;}
+#endtr
+
+
+#trans t3_2_7
+in {Idle:<..>;Test2:<..>;Read2:7*<..>;Read2<8;}
+out {Write2:<..>;Idle:7*<..>;}
+#endtr
+
+
+#trans t3_2_8
+in {Idle:<..>;Test2:<..>;Read2:8*<..>;Read2<9;}
+out {Write2:<..>;Idle:8*<..>;}
+#endtr
+
+
+#trans t3_2_9
+in {Idle:<..>;Test2:<..>;Read2:9*<..>;Read2<10;}
+out {Write2:<..>;Idle:9*<..>;}
+#endtr
+
+#trans t4_2
+in {Write2:<..>;}
+out {Idle:<..>;Test2:<..>;}
+#endtr
+
+#trans t1_3
+in {Idle:<..>;Test3:<..>;}
+out {Read3:<..>;Test3:<..>;}
+#endtr
+
+#trans t2_3
+in {Read3:<..>;}
+out {Idle:<..>;}
+#endtr
+
+#trans t3_3_0
+in {Idle:<..>;Test3:<..>;Read3:0*<..>;Read3<1;}
+out {Write3:<..>;Idle:0*<..>;}
+#endtr
+
+
+#trans t3_3_1
+in {Idle:<..>;Test3:<..>;Read3:1*<..>;Read3<2;}
+out {Write3:<..>;Idle:1*<..>;}
+#endtr
+
+
+#trans t3_3_2
+in {Idle:<..>;Test3:<..>;Read3:2*<..>;Read3<3;}
+out {Write3:<..>;Idle:2*<..>;}
+#endtr
+
+
+#trans t3_3_3
+in {Idle:<..>;Test3:<..>;Read3:3*<..>;Read3<4;}
+out {Write3:<..>;Idle:3*<..>;}
+#endtr
+
+
+#trans t3_3_4
+in {Idle:<..>;Test3:<..>;Read3:4*<..>;Read3<5;}
+out {Write3:<..>;Idle:4*<..>;}
+#endtr
+
+
+#trans t3_3_5
+in {Idle:<..>;Test3:<..>;Read3:5*<..>;Read3<6;}
+out {Write3:<..>;Idle:5*<..>;}
+#endtr
+
+
+#trans t3_3_6
+in {Idle:<..>;Test3:<..>;Read3:6*<..>;Read3<7;}
+out {Write3:<..>;Idle:6*<..>;}
+#endtr
+
+
+#trans t3_3_7
+in {Idle:<..>;Test3:<..>;Read3:7*<..>;Read3<8;}
+out {Write3:<..>;Idle:7*<..>;}
+#endtr
+
+
+#trans t3_3_8
+in {Idle:<..>;Test3:<..>;Read3:8*<..>;Read3<9;}
+out {Write3:<..>;Idle:8*<..>;}
+#endtr
+
+
+#trans t3_3_9
+in {Idle:<..>;Test3:<..>;Read3:9*<..>;Read3<10;}
+out {Write3:<..>;Idle:9*<..>;}
+#endtr
+
+#trans t4_3
+in {Write3:<..>;}
+out {Idle:<..>;Test3:<..>;}
+#endtr
+
+#trans t1_4
+in {Idle:<..>;Test4:<..>;}
+out {Read4:<..>;Test4:<..>;}
+#endtr
+
+#trans t2_4
+in {Read4:<..>;}
+out {Idle:<..>;}
+#endtr
+
+#trans t3_4_0
+in {Idle:<..>;Test4:<..>;Read4:0*<..>;Read4<1;}
+out {Write4:<..>;Idle:0*<..>;}
+#endtr
+
+
+#trans t3_4_1
+in {Idle:<..>;Test4:<..>;Read4:1*<..>;Read4<2;}
+out {Write4:<..>;Idle:1*<..>;}
+#endtr
+
+
+#trans t3_4_2
+in {Idle:<..>;Test4:<..>;Read4:2*<..>;Read4<3;}
+out {Write4:<..>;Idle:2*<..>;}
+#endtr
+
+
+#trans t3_4_3
+in {Idle:<..>;Test4:<..>;Read4:3*<..>;Read4<4;}
+out {Write4:<..>;Idle:3*<..>;}
+#endtr
+
+
+#trans t3_4_4
+in {Idle:<..>;Test4:<..>;Read4:4*<..>;Read4<5;}
+out {Write4:<..>;Idle:4*<..>;}
+#endtr
+
+
+#trans t3_4_5
+in {Idle:<..>;Test4:<..>;Read4:5*<..>;Read4<6;}
+out {Write4:<..>;Idle:5*<..>;}
+#endtr
+
+
+#trans t3_4_6
+in {Idle:<..>;Test4:<..>;Read4:6*<..>;Read4<7;}
+out {Write4:<..>;Idle:6*<..>;}
+#endtr
+
+
+#trans t3_4_7
+in {Idle:<..>;Test4:<..>;Read4:7*<..>;Read4<8;}
+out {Write4:<..>;Idle:7*<..>;}
+#endtr
+
+
+#trans t3_4_8
+in {Idle:<..>;Test4:<..>;Read4:8*<..>;Read4<9;}
+out {Write4:<..>;Idle:8*<..>;}
+#endtr
+
+
+#trans t3_4_9
+in {Idle:<..>;Test4:<..>;Read4:9*<..>;Read4<10;}
+out {Write4:<..>;Idle:9*<..>;}
+#endtr
+
+#trans t4_4
+in {Write4:<..>;}
+out {Idle:<..>;Test4:<..>;}
+#endtr
+
+#trans t1_5
+in {Idle:<..>;Test5:<..>;}
+out {Read5:<..>;Test5:<..>;}
+#endtr
+
+#trans t2_5
+in {Read5:<..>;}
+out {Idle:<..>;}
+#endtr
+
+#trans t3_5_0
+in {Idle:<..>;Test5:<..>;Read5:0*<..>;Read5<1;}
+out {Write5:<..>;Idle:0*<..>;}
+#endtr
+
+
+#trans t3_5_1
+in {Idle:<..>;Test5:<..>;Read5:1*<..>;Read5<2;}
+out {Write5:<..>;Idle:1*<..>;}
+#endtr
+
+
+#trans t3_5_2
+in {Idle:<..>;Test5:<..>;Read5:2*<..>;Read5<3;}
+out {Write5:<..>;Idle:2*<..>;}
+#endtr
+
+
+#trans t3_5_3
+in {Idle:<..>;Test5:<..>;Read5:3*<..>;Read5<4;}
+out {Write5:<..>;Idle:3*<..>;}
+#endtr
+
+
+#trans t3_5_4
+in {Idle:<..>;Test5:<..>;Read5:4*<..>;Read5<5;}
+out {Write5:<..>;Idle:4*<..>;}
+#endtr
+
+
+#trans t3_5_5
+in {Idle:<..>;Test5:<..>;Read5:5*<..>;Read5<6;}
+out {Write5:<..>;Idle:5*<..>;}
+#endtr
+
+
+#trans t3_5_6
+in {Idle:<..>;Test5:<..>;Read5:6*<..>;Read5<7;}
+out {Write5:<..>;Idle:6*<..>;}
+#endtr
+
+
+#trans t3_5_7
+in {Idle:<..>;Test5:<..>;Read5:7*<..>;Read5<8;}
+out {Write5:<..>;Idle:7*<..>;}
+#endtr
+
+
+#trans t3_5_8
+in {Idle:<..>;Test5:<..>;Read5:8*<..>;Read5<9;}
+out {Write5:<..>;Idle:8*<..>;}
+#endtr
+
+
+#trans t3_5_9
+in {Idle:<..>;Test5:<..>;Read5:9*<..>;Read5<10;}
+out {Write5:<..>;Idle:9*<..>;}
+#endtr
+
+#trans t4_5
+in {Write5:<..>;}
+out {Idle:<..>;Test5:<..>;}
+#endtr
+
+#trans t1_6
+in {Idle:<..>;Test6:<..>;}
+out {Read6:<..>;Test6:<..>;}
+#endtr
+
+#trans t2_6
+in {Read6:<..>;}
+out {Idle:<..>;}
+#endtr
+
+#trans t3_6_0
+in {Idle:<..>;Test6:<..>;Read6:0*<..>;Read6<1;}
+out {Write6:<..>;Idle:0*<..>;}
+#endtr
+
+
+#trans t3_6_1
+in {Idle:<..>;Test6:<..>;Read6:1*<..>;Read6<2;}
+out {Write6:<..>;Idle:1*<..>;}
+#endtr
+
+
+#trans t3_6_2
+in {Idle:<..>;Test6:<..>;Read6:2*<..>;Read6<3;}
+out {Write6:<..>;Idle:2*<..>;}
+#endtr
+
+
+#trans t3_6_3
+in {Idle:<..>;Test6:<..>;Read6:3*<..>;Read6<4;}
+out {Write6:<..>;Idle:3*<..>;}
+#endtr
+
+
+#trans t3_6_4
+in {Idle:<..>;Test6:<..>;Read6:4*<..>;Read6<5;}
+out {Write6:<..>;Idle:4*<..>;}
+#endtr
+
+
+#trans t3_6_5
+in {Idle:<..>;Test6:<..>;Read6:5*<..>;Read6<6;}
+out {Write6:<..>;Idle:5*<..>;}
+#endtr
+
+
+#trans t3_6_6
+in {Idle:<..>;Test6:<..>;Read6:6*<..>;Read6<7;}
+out {Write6:<..>;Idle:6*<..>;}
+#endtr
+
+
+#trans t3_6_7
+in {Idle:<..>;Test6:<..>;Read6:7*<..>;Read6<8;}
+out {Write6:<..>;Idle:7*<..>;}
+#endtr
+
+
+#trans t3_6_8
+in {Idle:<..>;Test6:<..>;Read6:8*<..>;Read6<9;}
+out {Write6:<..>;Idle:8*<..>;}
+#endtr
+
+
+#trans t3_6_9
+in {Idle:<..>;Test6:<..>;Read6:9*<..>;Read6<10;}
+out {Write6:<..>;Idle:9*<..>;}
+#endtr
+
+#trans t4_6
+in {Write6:<..>;}
+out {Idle:<..>;Test6:<..>;}
+#endtr
+
+#trans t1_7
+in {Idle:<..>;Test7:<..>;}
+out {Read7:<..>;Test7:<..>;}
+#endtr
+
+#trans t2_7
+in {Read7:<..>;}
+out {Idle:<..>;}
+#endtr
+
+#trans t3_7_0
+in {Idle:<..>;Test7:<..>;Read7:0*<..>;Read7<1;}
+out {Write7:<..>;Idle:0*<..>;}
+#endtr
+
+
+#trans t3_7_1
+in {Idle:<..>;Test7:<..>;Read7:1*<..>;Read7<2;}
+out {Write7:<..>;Idle:1*<..>;}
+#endtr
+
+
+#trans t3_7_2
+in {Idle:<..>;Test7:<..>;Read7:2*<..>;Read7<3;}
+out {Write7:<..>;Idle:2*<..>;}
+#endtr
+
+
+#trans t3_7_3
+in {Idle:<..>;Test7:<..>;Read7:3*<..>;Read7<4;}
+out {Write7:<..>;Idle:3*<..>;}
+#endtr
+
+
+#trans t3_7_4
+in {Idle:<..>;Test7:<..>;Read7:4*<..>;Read7<5;}
+out {Write7:<..>;Idle:4*<..>;}
+#endtr
+
+
+#trans t3_7_5
+in {Idle:<..>;Test7:<..>;Read7:5*<..>;Read7<6;}
+out {Write7:<..>;Idle:5*<..>;}
+#endtr
+
+
+#trans t3_7_6
+in {Idle:<..>;Test7:<..>;Read7:6*<..>;Read7<7;}
+out {Write7:<..>;Idle:6*<..>;}
+#endtr
+
+
+#trans t3_7_7
+in {Idle:<..>;Test7:<..>;Read7:7*<..>;Read7<8;}
+out {Write7:<..>;Idle:7*<..>;}
+#endtr
+
+
+#trans t3_7_8
+in {Idle:<..>;Test7:<..>;Read7:8*<..>;Read7<9;}
+out {Write7:<..>;Idle:8*<..>;}
+#endtr
+
+
+#trans t3_7_9
+in {Idle:<..>;Test7:<..>;Read7:9*<..>;Read7<10;}
+out {Write7:<..>;Idle:9*<..>;}
+#endtr
+
+#trans t4_7
+in {Write7:<..>;}
+out {Idle:<..>;Test7:<..>;}
+#endtr
+
+#trans t1_8
+in {Idle:<..>;Test8:<..>;}
+out {Read8:<..>;Test8:<..>;}
+#endtr
+
+#trans t2_8
+in {Read8:<..>;}
+out {Idle:<..>;}
+#endtr
+
+#trans t3_8_0
+in {Idle:<..>;Test8:<..>;Read8:0*<..>;Read8<1;}
+out {Write8:<..>;Idle:0*<..>;}
+#endtr
+
+
+#trans t3_8_1
+in {Idle:<..>;Test8:<..>;Read8:1*<..>;Read8<2;}
+out {Write8:<..>;Idle:1*<..>;}
+#endtr
+
+
+#trans t3_8_2
+in {Idle:<..>;Test8:<..>;Read8:2*<..>;Read8<3;}
+out {Write8:<..>;Idle:2*<..>;}
+#endtr
+
+
+#trans t3_8_3
+in {Idle:<..>;Test8:<..>;Read8:3*<..>;Read8<4;}
+out {Write8:<..>;Idle:3*<..>;}
+#endtr
+
+
+#trans t3_8_4
+in {Idle:<..>;Test8:<..>;Read8:4*<..>;Read8<5;}
+out {Write8:<..>;Idle:4*<..>;}
+#endtr
+
+
+#trans t3_8_5
+in {Idle:<..>;Test8:<..>;Read8:5*<..>;Read8<6;}
+out {Write8:<..>;Idle:5*<..>;}
+#endtr
+
+
+#trans t3_8_6
+in {Idle:<..>;Test8:<..>;Read8:6*<..>;Read8<7;}
+out {Write8:<..>;Idle:6*<..>;}
+#endtr
+
+
+#trans t3_8_7
+in {Idle:<..>;Test8:<..>;Read8:7*<..>;Read8<8;}
+out {Write8:<..>;Idle:7*<..>;}
+#endtr
+
+
+#trans t3_8_8
+in {Idle:<..>;Test8:<..>;Read8:8*<..>;Read8<9;}
+out {Write8:<..>;Idle:8*<..>;}
+#endtr
+
+
+#trans t3_8_9
+in {Idle:<..>;Test8:<..>;Read8:9*<..>;Read8<10;}
+out {Write8:<..>;Idle:9*<..>;}
+#endtr
+
+#trans t4_8
+in {Write8:<..>;}
+out {Idle:<..>;Test8:<..>;}
+#endtr
+
+#trans t1_9
+in {Idle:<..>;Test9:<..>;}
+out {Read9:<..>;Test9:<..>;}
+#endtr
+
+#trans t2_9
+in {Read9:<..>;}
+out {Idle:<..>;}
+#endtr
+
+#trans t3_9_0
+in {Idle:<..>;Test9:<..>;Read9:0*<..>;Read9<1;}
+out {Write9:<..>;Idle:0*<..>;}
+#endtr
+
+
+#trans t3_9_1
+in {Idle:<..>;Test9:<..>;Read9:1*<..>;Read9<2;}
+out {Write9:<..>;Idle:1*<..>;}
+#endtr
+
+
+#trans t3_9_2
+in {Idle:<..>;Test9:<..>;Read9:2*<..>;Read9<3;}
+out {Write9:<..>;Idle:2*<..>;}
+#endtr
+
+
+#trans t3_9_3
+in {Idle:<..>;Test9:<..>;Read9:3*<..>;Read9<4;}
+out {Write9:<..>;Idle:3*<..>;}
+#endtr
+
+
+#trans t3_9_4
+in {Idle:<..>;Test9:<..>;Read9:4*<..>;Read9<5;}
+out {Write9:<..>;Idle:4*<..>;}
+#endtr
+
+
+#trans t3_9_5
+in {Idle:<..>;Test9:<..>;Read9:5*<..>;Read9<6;}
+out {Write9:<..>;Idle:5*<..>;}
+#endtr
+
+
+#trans t3_9_6
+in {Idle:<..>;Test9:<..>;Read9:6*<..>;Read9<7;}
+out {Write9:<..>;Idle:6*<..>;}
+#endtr
+
+
+#trans t3_9_7
+in {Idle:<..>;Test9:<..>;Read9:7*<..>;Read9<8;}
+out {Write9:<..>;Idle:7*<..>;}
+#endtr
+
+
+#trans t3_9_8
+in {Idle:<..>;Test9:<..>;Read9:8*<..>;Read9<9;}
+out {Write9:<..>;Idle:8*<..>;}
+#endtr
+
+
+#trans t3_9_9
+in {Idle:<..>;Test9:<..>;Read9:9*<..>;Read9<10;}
+out {Write9:<..>;Idle:9*<..>;}
+#endtr
+
+#trans t4_9
+in {Write9:<..>;}
+out {Idle:<..>;Test9:<..>;}
+#endtr

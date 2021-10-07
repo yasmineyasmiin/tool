@@ -1,0 +1,19 @@
+#place A mk(100*<..>)
+#place B
+#place CS
+#place EX mk(<..>)
+
+#trans t1
+in {A:<..>;}
+out {B:<..>;}
+#endtr
+
+#trans t2
+in {B:<..>;EX:<..>;}
+out {CS:<..>;}
+#endtr
+
+#trans t3
+in {CS:<..>;}
+out {A:<..>;EX:<..>;}
+#endtr

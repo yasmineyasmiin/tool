@@ -1,0 +1,35 @@
+#place Idle3 mk(<..>)
+#place WaitLeft3
+#place HasLeft3
+#place WaitRight3
+#place HasRight3
+#place Fork3 mk(<..>)
+#place IsEating3
+#trans GoLeft0
+in {Fork3:<..>;}
+out {}
+#endtr
+#trans Release0
+in {}
+out {Fork3:<..>;}
+#endtr
+#trans GoEat3
+in {Idle3:<..>;}
+out {WaitLeft3:<..>;WaitRight3:<..>;}
+#endtr
+#trans GoLeft3
+in {WaitLeft3:<..>;}
+out {HasLeft3:<..>;}
+#endtr
+#trans GoRight3
+in {Fork3:<..>;WaitRight3:<..>;}
+out {HasRight3:<..>;}
+#endtr
+#trans Eat3
+in {HasLeft3:<..>;HasRight3:<..>;}
+out {IsEating3:<..>;}
+#endtr
+#trans Release3
+in {IsEating3:<..>;}
+out {Idle3:<..>;Fork3:<..>;}
+#endtr

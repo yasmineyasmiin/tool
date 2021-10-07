@@ -1,0 +1,48 @@
+#place C1 mk(<..>)
+#place E1
+#place A1 mk(<..>)
+#place B1
+#place D1
+#place F1
+#place G1
+#place H1
+#trans Free0
+in {C1:<..>;}
+out {E1:<..>;}
+#endtr
+#trans Used0
+in {C1:<..>;}
+out {D1:<..>;}
+#endtr
+#trans Free1
+in {A1:<..>;}
+out {B1:<..>;}
+#endtr
+#trans Used1
+in {H1:<..>;}
+out {B1:<..>;}
+#endtr
+#trans Get1
+in {F1:<..>;B1:<..>;}
+out {C1:<..>;A1:<..>;}
+#endtr
+#trans Put1
+in {B1:<..>;G1:<..>;}
+out {C1:<..>;H1:<..>;}
+#endtr
+#trans Other1
+in {D1:<..>;}
+out {G1:<..>;}
+#endtr
+#trans Owner1
+in {D1:<..>;}
+out {E1:<..>;}
+#endtr
+#trans GoOn1
+in {E1:<..>;}
+out {F1:<..>;}
+#endtr
+#trans Write1
+in {E1:<..>;}
+out {G1:<..>;}
+#endtr

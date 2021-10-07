@@ -1,0 +1,88 @@
+#place C2 mk(<..>)
+#place E2
+#place A2 mk(<..>)
+#place B2
+#place D2
+#place F2
+#place G2
+#place H2
+#place C3 mk(<..>)
+#place E3
+#place A3 mk(<..>)
+#place B3
+#place D3
+#place F3
+#place G3
+#place H3
+#trans Free0
+in {C3:<..>;}
+out {E3:<..>;}
+#endtr
+#trans Used0
+in {C3:<..>;}
+out {D3:<..>;}
+#endtr
+#trans Free2
+in {A2:<..>;}
+out {B2:<..>;}
+#endtr
+#trans Used2
+in {H2:<..>;}
+out {B2:<..>;}
+#endtr
+#trans Get2
+in {F2:<..>;B2:<..>;}
+out {C2:<..>;A2:<..>;}
+#endtr
+#trans Put2
+in {B2:<..>;G2:<..>;}
+out {C2:<..>;H2:<..>;}
+#endtr
+#trans Other2
+in {D2:<..>;}
+out {G2:<..>;}
+#endtr
+#trans Owner2
+in {D2:<..>;}
+out {E2:<..>;}
+#endtr
+#trans GoOn2
+in {E2:<..>;}
+out {F2:<..>;}
+#endtr
+#trans Write2
+in {E2:<..>;}
+out {G2:<..>;}
+#endtr
+#trans Free3
+in {A3:<..>;C2:<..>;}
+out {B3:<..>;E2:<..>;}
+#endtr
+#trans Used3
+in {H3:<..>;C2:<..>;}
+out {B3:<..>;D2:<..>;}
+#endtr
+#trans Get3
+in {F3:<..>;B3:<..>;}
+out {C3:<..>;A3:<..>;}
+#endtr
+#trans Put3
+in {B3:<..>;G3:<..>;}
+out {C3:<..>;H3:<..>;}
+#endtr
+#trans Other3
+in {D3:<..>;}
+out {G3:<..>;}
+#endtr
+#trans Owner3
+in {D3:<..>;}
+out {E3:<..>;}
+#endtr
+#trans GoOn3
+in {E3:<..>;}
+out {F3:<..>;}
+#endtr
+#trans Write3
+in {E3:<..>;}
+out {G3:<..>;}
+#endtr

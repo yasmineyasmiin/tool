@@ -1,0 +1,18 @@
+#place Idle1 mk(<..>)
+#place Wait1
+#trans T1_1
+in {Idle1:<..>;}
+out {Wait1:<..>;}
+#endtr
+#trans T2_1
+in {Wait1:<..>;}
+out {Idle1:<..>;}
+#endtr
+#trans T3_1
+in {Idle1:<..>;}
+out {}
+#endtr
+#trans T4_1
+in {}
+out {Idle1:<..>;}
+#endtr

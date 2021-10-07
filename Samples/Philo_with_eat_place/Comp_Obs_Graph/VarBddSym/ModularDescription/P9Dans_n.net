@@ -1,0 +1,35 @@
+#place Idle8 mk(<..>)
+#place WaitLeft8
+#place HasLeft8
+#place WaitRight8
+#place HasRight8
+#place Fork8 mk(<..>)
+#place IsEating8
+#trans GoEat8
+in {Idle8:<..>;}
+out {WaitLeft8:<..>;WaitRight8:<..>;}
+#endtr
+#trans GoLeft8
+in {WaitLeft8:<..>;}
+out {HasLeft8:<..>;}
+#endtr
+#trans GoRight8
+in {Fork8:<..>;WaitRight8:<..>;}
+out {HasRight8:<..>;}
+#endtr
+#trans Eat8
+in {HasLeft8:<..>;HasRight8:<..>;}
+out {IsEating8:<..>;}
+#endtr
+#trans Release8
+in {IsEating8:<..>;}
+out {Idle8:<..>;Fork8:<..>;}
+#endtr
+#trans GoLeft9
+in {Fork8:<..>;}
+out {}
+#endtr
+#trans Release9
+in {}
+out {Fork8:<..>;}
+#endtr

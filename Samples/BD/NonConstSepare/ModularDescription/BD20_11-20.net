@@ -1,0 +1,290 @@
+#place Idle10 mk(<..>)
+#place Wait10
+#place Update10
+#place Mess10
+#place Ack10
+#place Idle11 mk(<..>)
+#place Wait11
+#place Update11
+#place Mess11
+#place Ack11
+#place Idle12 mk(<..>)
+#place Wait12
+#place Update12
+#place Mess12
+#place Ack12
+#place Idle13 mk(<..>)
+#place Wait13
+#place Update13
+#place Mess13
+#place Ack13
+#place Idle14 mk(<..>)
+#place Wait14
+#place Update14
+#place Mess14
+#place Ack14
+#place Idle15 mk(<..>)
+#place Wait15
+#place Update15
+#place Mess15
+#place Ack15
+#place Idle16 mk(<..>)
+#place Wait16
+#place Update16
+#place Mess16
+#place Ack16
+#place Idle17 mk(<..>)
+#place Wait17
+#place Update17
+#place Mess17
+#place Ack17
+#place Idle18 mk(<..>)
+#place Wait18
+#place Update18
+#place Mess18
+#place Ack18
+#place Idle19 mk(<..>)
+#place Wait19
+#place Update19
+#place Mess19
+#place Ack19
+#trans T1_0
+in {}
+out {Mess10:<..>;Mess11:<..>;Mess12:<..>;Mess13:<..>;Mess14:<..>;Mess15:<..>;Mess16:<..>;Mess17:<..>;Mess18:<..>;Mess19:<..>;}
+#endtr
+#trans T2_0
+in {Ack10:<..>;Ack11:<..>;Ack12:<..>;Ack13:<..>;Ack14:<..>;Ack15:<..>;Ack16:<..>;Ack17:<..>;Ack18:<..>;Ack19:<..>;}
+out {}
+#endtr
+#trans T1_1
+in {}
+out {Mess10:<..>;Mess11:<..>;Mess12:<..>;Mess13:<..>;Mess14:<..>;Mess15:<..>;Mess16:<..>;Mess17:<..>;Mess18:<..>;Mess19:<..>;}
+#endtr
+#trans T2_1
+in {Ack10:<..>;Ack11:<..>;Ack12:<..>;Ack13:<..>;Ack14:<..>;Ack15:<..>;Ack16:<..>;Ack17:<..>;Ack18:<..>;Ack19:<..>;}
+out {}
+#endtr
+#trans T1_2
+in {}
+out {Mess10:<..>;Mess11:<..>;Mess12:<..>;Mess13:<..>;Mess14:<..>;Mess15:<..>;Mess16:<..>;Mess17:<..>;Mess18:<..>;Mess19:<..>;}
+#endtr
+#trans T2_2
+in {Ack10:<..>;Ack11:<..>;Ack12:<..>;Ack13:<..>;Ack14:<..>;Ack15:<..>;Ack16:<..>;Ack17:<..>;Ack18:<..>;Ack19:<..>;}
+out {}
+#endtr
+#trans T1_3
+in {}
+out {Mess10:<..>;Mess11:<..>;Mess12:<..>;Mess13:<..>;Mess14:<..>;Mess15:<..>;Mess16:<..>;Mess17:<..>;Mess18:<..>;Mess19:<..>;}
+#endtr
+#trans T2_3
+in {Ack10:<..>;Ack11:<..>;Ack12:<..>;Ack13:<..>;Ack14:<..>;Ack15:<..>;Ack16:<..>;Ack17:<..>;Ack18:<..>;Ack19:<..>;}
+out {}
+#endtr
+#trans T1_4
+in {}
+out {Mess10:<..>;Mess11:<..>;Mess12:<..>;Mess13:<..>;Mess14:<..>;Mess15:<..>;Mess16:<..>;Mess17:<..>;Mess18:<..>;Mess19:<..>;}
+#endtr
+#trans T2_4
+in {Ack10:<..>;Ack11:<..>;Ack12:<..>;Ack13:<..>;Ack14:<..>;Ack15:<..>;Ack16:<..>;Ack17:<..>;Ack18:<..>;Ack19:<..>;}
+out {}
+#endtr
+#trans T1_5
+in {}
+out {Mess10:<..>;Mess11:<..>;Mess12:<..>;Mess13:<..>;Mess14:<..>;Mess15:<..>;Mess16:<..>;Mess17:<..>;Mess18:<..>;Mess19:<..>;}
+#endtr
+#trans T2_5
+in {Ack10:<..>;Ack11:<..>;Ack12:<..>;Ack13:<..>;Ack14:<..>;Ack15:<..>;Ack16:<..>;Ack17:<..>;Ack18:<..>;Ack19:<..>;}
+out {}
+#endtr
+#trans T1_6
+in {}
+out {Mess10:<..>;Mess11:<..>;Mess12:<..>;Mess13:<..>;Mess14:<..>;Mess15:<..>;Mess16:<..>;Mess17:<..>;Mess18:<..>;Mess19:<..>;}
+#endtr
+#trans T2_6
+in {Ack10:<..>;Ack11:<..>;Ack12:<..>;Ack13:<..>;Ack14:<..>;Ack15:<..>;Ack16:<..>;Ack17:<..>;Ack18:<..>;Ack19:<..>;}
+out {}
+#endtr
+#trans T1_7
+in {}
+out {Mess10:<..>;Mess11:<..>;Mess12:<..>;Mess13:<..>;Mess14:<..>;Mess15:<..>;Mess16:<..>;Mess17:<..>;Mess18:<..>;Mess19:<..>;}
+#endtr
+#trans T2_7
+in {Ack10:<..>;Ack11:<..>;Ack12:<..>;Ack13:<..>;Ack14:<..>;Ack15:<..>;Ack16:<..>;Ack17:<..>;Ack18:<..>;Ack19:<..>;}
+out {}
+#endtr
+#trans T1_8
+in {}
+out {Mess10:<..>;Mess11:<..>;Mess12:<..>;Mess13:<..>;Mess14:<..>;Mess15:<..>;Mess16:<..>;Mess17:<..>;Mess18:<..>;Mess19:<..>;}
+#endtr
+#trans T2_8
+in {Ack10:<..>;Ack11:<..>;Ack12:<..>;Ack13:<..>;Ack14:<..>;Ack15:<..>;Ack16:<..>;Ack17:<..>;Ack18:<..>;Ack19:<..>;}
+out {}
+#endtr
+#trans T1_9
+in {}
+out {Mess10:<..>;Mess11:<..>;Mess12:<..>;Mess13:<..>;Mess14:<..>;Mess15:<..>;Mess16:<..>;Mess17:<..>;Mess18:<..>;Mess19:<..>;}
+#endtr
+#trans T2_9
+in {Ack10:<..>;Ack11:<..>;Ack12:<..>;Ack13:<..>;Ack14:<..>;Ack15:<..>;Ack16:<..>;Ack17:<..>;Ack18:<..>;Ack19:<..>;}
+out {}
+#endtr
+#trans T1_10
+in {Idle10:<..>;}
+out {Wait10:<..>;Mess11:<..>;Mess12:<..>;Mess13:<..>;Mess14:<..>;Mess15:<..>;Mess16:<..>;Mess17:<..>;Mess18:<..>;Mess19:<..>;}
+#endtr
+#trans T2_10
+in {Wait10:<..>;Ack11:<..>;Ack12:<..>;Ack13:<..>;Ack14:<..>;Ack15:<..>;Ack16:<..>;Ack17:<..>;Ack18:<..>;Ack19:<..>;}
+out {Idle10:<..>;}
+#endtr
+#trans T3_10
+in {Idle10:<..>;Mess10:<..>;}
+out {Update10:<..>;}
+#endtr
+#trans T4_10
+in {Update10:<..>;}
+out {Idle10:<..>;Ack10:<..>;}
+#endtr
+#trans T1_11
+in {Idle11:<..>;}
+out {Wait11:<..>;Mess10:<..>;Mess12:<..>;Mess13:<..>;Mess14:<..>;Mess15:<..>;Mess16:<..>;Mess17:<..>;Mess18:<..>;Mess19:<..>;}
+#endtr
+#trans T2_11
+in {Wait11:<..>;Ack10:<..>;Ack12:<..>;Ack13:<..>;Ack14:<..>;Ack15:<..>;Ack16:<..>;Ack17:<..>;Ack18:<..>;Ack19:<..>;}
+out {Idle11:<..>;}
+#endtr
+#trans T3_11
+in {Idle11:<..>;Mess11:<..>;}
+out {Update11:<..>;}
+#endtr
+#trans T4_11
+in {Update11:<..>;}
+out {Idle11:<..>;Ack11:<..>;}
+#endtr
+#trans T1_12
+in {Idle12:<..>;}
+out {Wait12:<..>;Mess10:<..>;Mess11:<..>;Mess13:<..>;Mess14:<..>;Mess15:<..>;Mess16:<..>;Mess17:<..>;Mess18:<..>;Mess19:<..>;}
+#endtr
+#trans T2_12
+in {Wait12:<..>;Ack10:<..>;Ack11:<..>;Ack13:<..>;Ack14:<..>;Ack15:<..>;Ack16:<..>;Ack17:<..>;Ack18:<..>;Ack19:<..>;}
+out {Idle12:<..>;}
+#endtr
+#trans T3_12
+in {Idle12:<..>;Mess12:<..>;}
+out {Update12:<..>;}
+#endtr
+#trans T4_12
+in {Update12:<..>;}
+out {Idle12:<..>;Ack12:<..>;}
+#endtr
+#trans T1_13
+in {Idle13:<..>;}
+out {Wait13:<..>;Mess10:<..>;Mess11:<..>;Mess12:<..>;Mess14:<..>;Mess15:<..>;Mess16:<..>;Mess17:<..>;Mess18:<..>;Mess19:<..>;}
+#endtr
+#trans T2_13
+in {Wait13:<..>;Ack10:<..>;Ack11:<..>;Ack12:<..>;Ack14:<..>;Ack15:<..>;Ack16:<..>;Ack17:<..>;Ack18:<..>;Ack19:<..>;}
+out {Idle13:<..>;}
+#endtr
+#trans T3_13
+in {Idle13:<..>;Mess13:<..>;}
+out {Update13:<..>;}
+#endtr
+#trans T4_13
+in {Update13:<..>;}
+out {Idle13:<..>;Ack13:<..>;}
+#endtr
+#trans T1_14
+in {Idle14:<..>;}
+out {Wait14:<..>;Mess10:<..>;Mess11:<..>;Mess12:<..>;Mess13:<..>;Mess15:<..>;Mess16:<..>;Mess17:<..>;Mess18:<..>;Mess19:<..>;}
+#endtr
+#trans T2_14
+in {Wait14:<..>;Ack10:<..>;Ack11:<..>;Ack12:<..>;Ack13:<..>;Ack15:<..>;Ack16:<..>;Ack17:<..>;Ack18:<..>;Ack19:<..>;}
+out {Idle14:<..>;}
+#endtr
+#trans T3_14
+in {Idle14:<..>;Mess14:<..>;}
+out {Update14:<..>;}
+#endtr
+#trans T4_14
+in {Update14:<..>;}
+out {Idle14:<..>;Ack14:<..>;}
+#endtr
+#trans T1_15
+in {Idle15:<..>;}
+out {Wait15:<..>;Mess10:<..>;Mess11:<..>;Mess12:<..>;Mess13:<..>;Mess14:<..>;Mess16:<..>;Mess17:<..>;Mess18:<..>;Mess19:<..>;}
+#endtr
+#trans T2_15
+in {Wait15:<..>;Ack10:<..>;Ack11:<..>;Ack12:<..>;Ack13:<..>;Ack14:<..>;Ack16:<..>;Ack17:<..>;Ack18:<..>;Ack19:<..>;}
+out {Idle15:<..>;}
+#endtr
+#trans T3_15
+in {Idle15:<..>;Mess15:<..>;}
+out {Update15:<..>;}
+#endtr
+#trans T4_15
+in {Update15:<..>;}
+out {Idle15:<..>;Ack15:<..>;}
+#endtr
+#trans T1_16
+in {Idle16:<..>;}
+out {Wait16:<..>;Mess10:<..>;Mess11:<..>;Mess12:<..>;Mess13:<..>;Mess14:<..>;Mess15:<..>;Mess17:<..>;Mess18:<..>;Mess19:<..>;}
+#endtr
+#trans T2_16
+in {Wait16:<..>;Ack10:<..>;Ack11:<..>;Ack12:<..>;Ack13:<..>;Ack14:<..>;Ack15:<..>;Ack17:<..>;Ack18:<..>;Ack19:<..>;}
+out {Idle16:<..>;}
+#endtr
+#trans T3_16
+in {Idle16:<..>;Mess16:<..>;}
+out {Update16:<..>;}
+#endtr
+#trans T4_16
+in {Update16:<..>;}
+out {Idle16:<..>;Ack16:<..>;}
+#endtr
+#trans T1_17
+in {Idle17:<..>;}
+out {Wait17:<..>;Mess10:<..>;Mess11:<..>;Mess12:<..>;Mess13:<..>;Mess14:<..>;Mess15:<..>;Mess16:<..>;Mess18:<..>;Mess19:<..>;}
+#endtr
+#trans T2_17
+in {Wait17:<..>;Ack10:<..>;Ack11:<..>;Ack12:<..>;Ack13:<..>;Ack14:<..>;Ack15:<..>;Ack16:<..>;Ack18:<..>;Ack19:<..>;}
+out {Idle17:<..>;}
+#endtr
+#trans T3_17
+in {Idle17:<..>;Mess17:<..>;}
+out {Update17:<..>;}
+#endtr
+#trans T4_17
+in {Update17:<..>;}
+out {Idle17:<..>;Ack17:<..>;}
+#endtr
+#trans T1_18
+in {Idle18:<..>;}
+out {Wait18:<..>;Mess10:<..>;Mess11:<..>;Mess12:<..>;Mess13:<..>;Mess14:<..>;Mess15:<..>;Mess16:<..>;Mess17:<..>;Mess19:<..>;}
+#endtr
+#trans T2_18
+in {Wait18:<..>;Ack10:<..>;Ack11:<..>;Ack12:<..>;Ack13:<..>;Ack14:<..>;Ack15:<..>;Ack16:<..>;Ack17:<..>;Ack19:<..>;}
+out {Idle18:<..>;}
+#endtr
+#trans T3_18
+in {Idle18:<..>;Mess18:<..>;}
+out {Update18:<..>;}
+#endtr
+#trans T4_18
+in {Update18:<..>;}
+out {Idle18:<..>;Ack18:<..>;}
+#endtr
+#trans T1_19
+in {Idle19:<..>;}
+out {Wait19:<..>;Mess10:<..>;Mess11:<..>;Mess12:<..>;Mess13:<..>;Mess14:<..>;Mess15:<..>;Mess16:<..>;Mess17:<..>;Mess18:<..>;}
+#endtr
+#trans T2_19
+in {Wait19:<..>;Ack10:<..>;Ack11:<..>;Ack12:<..>;Ack13:<..>;Ack14:<..>;Ack15:<..>;Ack16:<..>;Ack17:<..>;Ack18:<..>;}
+out {Idle19:<..>;}
+#endtr
+#trans T3_19
+in {Idle19:<..>;Mess19:<..>;}
+out {Update19:<..>;}
+#endtr
+#trans T4_19
+in {Update19:<..>;}
+out {Idle19:<..>;Ack19:<..>;}
+#endtr

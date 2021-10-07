@@ -1,0 +1,116 @@
+#place Idle4 mk(<..>)
+#place Wait4
+#place Update4
+#place Mess4
+#place Ack4
+#place Idle5 mk(<..>)
+#place Wait5
+#place Update5
+#place Mess5
+#place Ack5
+#place Idle6 mk(<..>)
+#place Wait6
+#place Update6
+#place Mess6
+#place Ack6
+#place Idle7 mk(<..>)
+#place Wait7
+#place Update7
+#place Mess7
+#place Ack7
+#trans T1_0
+in {}
+out {Mess4:<..>;Mess5:<..>;Mess6:<..>;Mess7:<..>;}
+#endtr
+#trans T2_0
+in {Ack4:<..>;Ack5:<..>;Ack6:<..>;Ack7:<..>;}
+out {}
+#endtr
+#trans T1_1
+in {}
+out {Mess4:<..>;Mess5:<..>;Mess6:<..>;Mess7:<..>;}
+#endtr
+#trans T2_1
+in {Ack4:<..>;Ack5:<..>;Ack6:<..>;Ack7:<..>;}
+out {}
+#endtr
+#trans T1_2
+in {}
+out {Mess4:<..>;Mess5:<..>;Mess6:<..>;Mess7:<..>;}
+#endtr
+#trans T2_2
+in {Ack4:<..>;Ack5:<..>;Ack6:<..>;Ack7:<..>;}
+out {}
+#endtr
+#trans T1_3
+in {}
+out {Mess4:<..>;Mess5:<..>;Mess6:<..>;Mess7:<..>;}
+#endtr
+#trans T2_3
+in {Ack4:<..>;Ack5:<..>;Ack6:<..>;Ack7:<..>;}
+out {}
+#endtr
+#trans T1_4
+in {Idle4:<..>;}
+out {Wait4:<..>;Mess5:<..>;Mess6:<..>;Mess7:<..>;}
+#endtr
+#trans T2_4
+in {Wait4:<..>;Ack5:<..>;Ack6:<..>;Ack7:<..>;}
+out {Idle4:<..>;}
+#endtr
+#trans T3_4
+in {Idle4:<..>;Mess4:<..>;}
+out {Update4:<..>;}
+#endtr
+#trans T4_4
+in {Update4:<..>;}
+out {Idle4:<..>;Ack4:<..>;}
+#endtr
+#trans T1_5
+in {Idle5:<..>;}
+out {Wait5:<..>;Mess4:<..>;Mess6:<..>;Mess7:<..>;}
+#endtr
+#trans T2_5
+in {Wait5:<..>;Ack4:<..>;Ack6:<..>;Ack7:<..>;}
+out {Idle5:<..>;}
+#endtr
+#trans T3_5
+in {Idle5:<..>;Mess5:<..>;}
+out {Update5:<..>;}
+#endtr
+#trans T4_5
+in {Update5:<..>;}
+out {Idle5:<..>;Ack5:<..>;}
+#endtr
+#trans T1_6
+in {Idle6:<..>;}
+out {Wait6:<..>;Mess4:<..>;Mess5:<..>;Mess7:<..>;}
+#endtr
+#trans T2_6
+in {Wait6:<..>;Ack4:<..>;Ack5:<..>;Ack7:<..>;}
+out {Idle6:<..>;}
+#endtr
+#trans T3_6
+in {Idle6:<..>;Mess6:<..>;}
+out {Update6:<..>;}
+#endtr
+#trans T4_6
+in {Update6:<..>;}
+out {Idle6:<..>;Ack6:<..>;}
+#endtr
+#trans T1_7
+in {Idle7:<..>;}
+out {Wait7:<..>;Mess4:<..>;Mess5:<..>;Mess6:<..>;}
+#endtr
+#trans T2_7
+in {Wait7:<..>;Ack4:<..>;Ack5:<..>;Ack6:<..>;}
+out {Idle7:<..>;}
+#endtr
+#trans T3_7
+in {Idle7:<..>;Mess7:<..>;}
+out {Update7:<..>;}
+#endtr
+#trans T4_7
+in {Update7:<..>;}
+out {Idle7:<..>;Ack7:<..>;}
+#endtr
