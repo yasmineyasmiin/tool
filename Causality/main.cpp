@@ -37,43 +37,29 @@ R.caus(false,0);// remplir causality
       cout<<*i<<endl;
 }
 
-//map<int,int> transobs=R.calcul();/*----------------pour tester avec les transitions observées 1,7,8,10-----------------*/
 
-set<int> trans_nonobs;
-set<int> cycle;
-/*----------------------------------pour tester avec les transitions observées 7,8,10,11-----------------*/
-map <int,int> transobs;
-transobs[6]=1;
-transobs[7]=1;
-transobs[9]=1;
-transobs[2]=2;
 
- for (int i = 0; i < R.transitions.size(); i++ ){
- if ((transobs.find(i))== transobs.end()){
- trans_nonobs.insert(i);
-  
- }
- }  
- 
+map<int,int> obs;
+set<int> unobs;
+unobs=R.calcul1();
+
+for (int i = 0; i < R.transitions.size(); i++ )
+    {
+         if ((unobs.find(i))== unobs.end())
+         {
+         obs.insert({i,1}); 
+         }  
+    }	
+	
 
  
 
-
-
-for (auto i :transobs ){
-  cout<<"la trans t"<<i.first +1<<" nb occurence "<<i.second<<endl; 
-}
-  
-  for (auto i :trans_nonobs ){
-  cout<<"le num de trans non obs est t"<<i+1<<endl; 
-} 
- 
   double d,tps;  
   int b = 32;
-  RdPBDD DR(R,transobs,trans_nonobs, b);
+  RdPBDD DR(R,obs,unobs, b);
   MDGraph g;
  d = getTime();
-set<vector<int>> chemins= DR.chem_obs(g,transobs);
+set<vector<int>> chemins= DR.chem_obs(g,obs);
    cout << " n de chemins " << chemins.size() << endl;
     for (auto i: chemins)
     {   cout << " le chemin : "  << endl;
@@ -86,28 +72,58 @@ set<vector<int>> chemins= DR.chem_obs(g,transobs);
   tps = getTime() - d;
    cout << " Temps de construction du graphe d'observation " << tps << endl;
 
-/*for(auto i:g.GONodes)
-{cout<<"le noeud num "<<i->class_state.id()<<" a comme succ: "<<endl;
-for(auto k: i->Successors){
-        cout<<"**t"<<k.second+1<<endl;
+for(auto i:g.GONodes)
+{
+cout<<"le noeud num "<<i->class_state.id()<<" a comme succ: "<<endl;
+    for(auto k: i->Successors){
+        cout<<"**t"<<k.second+1<<" jusqu'a "<<k.first->class_state.id()<<endl;
         }
                 cout<<"**"<<endl;
-}*/
-   cout << " **********************on construit les chemins abstraits ************************* " << endl;
-/* stack <pair<Class_Of_State*, bdd >> k;
- for (auto i: chemins)
- {
- cout<< "---un nouv chem----"<<endl;
- k=DR.recherche_points_entree(i, g);
- }
- set <vector<int>> abstrait;
+}
+  
+ 
+ 
+
+  set <vector<int>> abstrait;
  for (auto i: chemins)
  {
   cout<< "---un nouv chem----"<<endl;
-    vector<int> chem_abs;
-    chem_abs= DR.chem_abs(i,g);
-    abstrait.insert(chem_abs);
-    
- }*/
+  vector<int> chem_abs;
+  chem_abs= DR.chem_abs(i,g);
+  
+  abstrait.insert(chem_abs); 
+  
+  cout<< "************************ ********************** ************************"<<endl;
+  cout<< "************************ ********************** ************************"<<endl; 
+   cout<< "************************    FINAL RESULT      ************************"<<endl;
+cout<<"                                                               "<<endl;
+cout<<"                                                               "<<endl;
+  
+cout<< "************************ observable transitions   ************************"<<endl;
+  for(auto i:obs)
+  {
+  cout<<"t"<<i.first+1<<endl;
+  }
+  
+  cout<< "************************ observable paths ************************"<<endl;
+ }
+ for (auto i: chemins)
+ {
+  cout<< "--- observable path ----"<<endl;
+  for (auto tr:i)
+  cout<<"t"<<tr+1<<endl;
+  }
+  
+    cout<< "************************  abstract paths ************************"<<endl;
+ for (auto i: abstrait)
+ {
+  cout<< "--- abstract path ----"<<endl;
+  for (auto tr:i)
+  cout<<"t"<<tr+1<<endl;
+  
+  }
+ 
+ 
+ 
 	return 0;
  }

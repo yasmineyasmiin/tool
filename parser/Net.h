@@ -19,13 +19,8 @@ public:
     string name;
   ~Node(){};
   vector< pair<int,int> > pre, post /*,inhibitor, preAuto, postAuto*/;
-  //vector<int> reset;
   void addPre(int,int);
   void addPost(int,int);
- // void addInhibitor(int,int);
-  //void addPreAuto(int,int);
- // void addPostAuto(int,int);
-  //void addReset(int);
     bool operator==(const Node &) const;
     bool operator<(const Node & t)const;
 };
@@ -49,15 +44,7 @@ public:
 
 
 };
-/*-----------------------------------------------------------------*/
-/*struct ltstr
-{
-	bool operator()(const char* s1, const char* s2) const
-	{
-		return strcmp(s1,s2)<0;
-	}
-};
-typedef set<const char*,ltstr> Set_mot;*/
+
 //typedef vector<Place> PLACES;
 typedef vector<Transition> TRANSITIONS;
 enum Relation  { Atom, Disj, Conj};
@@ -94,21 +81,13 @@ public:
 class net: public RdPMonteur {
 private:
  /*Initialisation des attributs*/
-  //bool Set_Observables(const char* file) ;
- // bool Set_Interface_Trans(const char* file) ;
-  //bool Set_Formula_Trans(const char* file) ;
- // bool Set_ObsNonObservables(Set_mot obs) ;
-  //void Set_Non_Observables();
+ 
 public:
   /* Attributs */ 
   vector<class Place> places;
   vector<class Transition> transitions;
   map<string,int> placeName;
   map<string,int> transitionName;
- //Set Observable;
- //Set NonObservable;
-//  Set InterfaceTrans;
-  //Set Formula_Trans;
   set < RelaCausal*> causality;
  
 
@@ -121,7 +100,8 @@ public:
   void caus(bool type=false,int nbn=0);
   set<ObsNCau*> observation(RelaCausal &r);
   void Obs_causee(ObsNCau & s);
-  map<int,int>calcul();
+  //map<int,int>calcul();
+  set<int> calcul1();//mathode jorg
   RelaCausal* rech_couple_cause(Transition t);
   bool addPlace(const string &place,int marking=0, int capacity=0);
   bool addQueue(const string &place,int capacity=0);
@@ -131,10 +111,7 @@ public:
   bool addPost(const string &place,const string &transition,int valuation=1);  
   bool addPreQueue(const string &place,const string &transition,int valuation=1);
   bool addPostQueue(const string &place,const string &transition,int valuation=1);  
- // bool addInhibitor(const string &place,const string &transition,int valuation=1);
-  //bool addPreAuto(const string &place,const string &transition,const string &valuation);
- // bool addPostAuto(const string &place,const string &transition,const string &valuation);  
-  //bool addReset(const string &place,const string &transition);
+ 
   /* Visualisation */
   int nbPlace() const {return places.size();};
   int nbTransition() const {return transitions.size();};

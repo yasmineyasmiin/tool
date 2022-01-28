@@ -34,9 +34,7 @@ private :
   Set Observable;
   Set NonObservable;
   map<string,int> transitionName;
-  //Set InterfaceTrans;
-  //Set Formula_Trans;
-  unsigned int Nb_places;
+   unsigned int Nb_places;
 public:
   bdd M0;
   bdd currentvar;
@@ -47,9 +45,9 @@ public:
 /* Génération de graphes d'observation */
   stack <pair<Class_Of_State*, bdd >>  recherche_points_entree(chem ch,MDGraph& g);
   set<chem> chem_obs(MDGraph& g,map <int,int> tranobs);
-  //chem chem_abs(chem ch,MDGraph& g );
-  //vector<int> Sub_path_agregate(bdd source,bdd cible,Class_Of_State * agr);
-  //pair <int,bdd> fireback(bdd courant,Class_Of_State * agr);
+  chem chem_abs(chem ch,MDGraph& g );
+  vector<int> Sub_path_agregate(bdd *source,bdd cible,Class_Of_State * agr);
+ void bdd_firable_obs(Class_Of_State* agr, int t);
 
   void compute_canonical_deterministic_graph_Opt(MDGraph& g) ;
   bdd Accessible_epsilon(bdd From);
@@ -57,7 +55,7 @@ public:
   bdd StepForward(bdd From);
   bdd StepForward2(bdd From);
   bdd StepBackward(bdd From);
-  //set<pair <int,bdd>> StepBackward1(bdd From);
+  pair<int,bdd>  StepBackward1(bdd From,Class_Of_State * agr ); //ajouté
   bdd StepBackward2(bdd From);
   bdd EmersonLey(bdd S, bool trace);
   Set firable_obs(bdd State);
@@ -66,6 +64,7 @@ public:
   bool Set_Div(bdd &S) const;
   bool Set_Bloc(bdd &S) const;
   bdd FrontiereNodes(bdd From) const ;
+  bdd FrontiereNodes1(bdd From, int t)  ;//ajouté
   bdd CanonizeR(bdd s, unsigned int i) ;
   RdPBDD(const net&,map <int,int> observables,Set NonObservables,int BOUND=32,bool init=false);
 
@@ -73,11 +72,7 @@ public:
 };
 /*____________Structure utiles aux produit synchronisé généralisé de n graphes d'observations ________*/
 
-/*typedef pair<Modular_Class_Of_State*,bdd*> CoupleNodes; // Méta-état (canonisé) + vecteur des bdds complets
-typedef pair<Set*,Set*> CoupleSets;//ens d'ens des trans de la formule franchissables non encore traitées + ens d'ens des trans de l'interface franchissables non encore traitées
-typedef pair<CoupleNodes,CoupleSets> PairProduct; // Couple + ens des ens des transitions franchissables non encore traitées
-typedef pair<PairProduct,bool> StackElt;
-typedef vector<StackElt> Stack;*/
+
 typedef pair<Modular_Class_Of_State*,bdd*> Couple;
 typedef pair<Couple,Set*> StackElt; 
 typedef stack<StackElt> Stack;

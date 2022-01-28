@@ -29,20 +29,7 @@ void Node::addPost(int node, int valuation) {
   post.push_back(x);
 }
 
-/*void Node::addInhibitor(int node, int valuation) {
-  pair < int, int > x(node, valuation);
-  inhibitor.push_back(x);
-}
 
-void Node::addPreAuto(int node, int valuation) {
-  pair < int, int > x(node, valuation);
-  preAuto.push_back(x);
-}
-
-void Node::addPostAuto(int node, int valuation) {
-  pair < int, int > x(node, valuation);
-  postAuto.push_back(x);
-}*/
 bool Node::operator == (const Node & n) const {
   return n.name == name;
 }
@@ -112,20 +99,7 @@ net::net(const char * f,
     placeName.clear();
     transitionName.clear();
   }
-  /*if (strlen(Formula_trans) > 0) {
-    //    cout<<"transitions de la formule non vide \n";
-    Set_Formula_Trans(Formula_trans);
-    if (strlen(Int_trans) > 0) {
-      Set_Interface_Trans(Int_trans);
-      //cout<<"transitions de l'interface non vide \n";
-    }
-    cout << "______________66666666666666666666666______________________\n";
-    set_union(InterfaceTrans.begin(), InterfaceTrans.end(), Formula_Trans.begin(), Formula_Trans.end(), inserter(Observable, Observable.begin()));
-    Set_Non_Observables();
-  } else
-    for (unsigned int i = 0; i < transitions.size(); i++)
-      Observable.insert(i);
-*/
+
   cout << "FIN CREATION \n";
 }
 
@@ -363,195 +337,32 @@ RelaCausal * net::rech_couple_cause(Transition t) {
 }
 
 /*------------------------------calcul l’ensemble d’observation-----------------------------------*/
- 
- map< int,int > net::calcul() {
- 
-  int num = 0;
-  set < ObsNCau > S, K;
-  set < ObsNCau *>H, E;
-  map < int,int > obs;
-  for (auto i: causality) {
-    num++;
-    //cout << "****** la relation de cos num " << num << "***************" << endl;
-    if (!i -> visited) {
-      E = observation( * i);
-          //cout << "---cette relation a un nb de ObsNcau egale a " << E.size() << endl;
-      for (auto e: E) {
-        cout << "---ancien elt de E : " << *e<<endl;
-        Obs_causee(*e);
-        K.insert(*e);
-        cout << "---element ajouté a K : " << *e<<endl;
-
-       
-      }
- 
-    }  
-  }
-  
-  
-    cout << "*****************generation de S ************ " << endl;
-    cout <<"on a un nombre dans k = "<<K.size()<<endl;
-        
-    for (auto k:K) {
-    bool ex = false;
-        cout<<"             "<<endl;
-    cout<<" **** ici on traite "<<k<<endl;
-
-    
-    
-    for (auto  h: H)
+set<int> net::calcul1() {
+  set<int> unobs;
+  int l=transitions.size(); 
+  for(int i=0;i<l;i++)
     {
-        cout<<"on parcourt la liste S  s:  "<<"s="<<*h<<endl;
-        if (k.couvrant == h->couvrant)
-        {
-        if(!h->cycle){h->cycle=k.cycle;}
-          cout << "element " << k.couvrant.name << " deja dans S " << endl;
-          for (auto m: k.couverts)
-          {
-            h->couverts.insert(m);
-          }
-          cout<<" le nouv S ---"<<*h<<endl;
-          ex = true;
-        }
-        else
-        {
-            if ((h->couverts).find(k.couvrant)!=h->couverts.end())
+    Transition t =transitions[i];
+         t.visited = true;
+         if (t.post.size() >= 1) 
             {
-                cout << "element " << k.couvrant.name << " existe dans S sous l'elmt " <<h->couvrant.name << endl;
-                for (auto m: k.couverts) {
-                    h->couverts.insert(m);
-                }
-                ex = true;
-                cout<<" le nouv S ---"<<*h<<endl;
-            }
-            for (auto i: k.couverts)
+                for (auto p : t.post)
                 {
-                    if (i == h->couvrant )
+                    if ((places[p.first]).pre.size()==1 && (places[p.first]).marking==0) 
                     {
-                        cout << "l'element " << k.couvrant.name << " couvre " <<  i.name << " deja dans S " << endl;
-                        ex = true;
-                        h->couvrant = k.couvrant;
-                        for (auto m: k.couverts) {
-                            h->couverts.insert(m);
-                        }
-                    cout<<" le nouv S ---"<<*h<<endl;
-                        break;
+                         unobs.insert(i);
                     }
                 }
-            
-          
-        }
+            }  
     }
-    if (!ex) {
-            cout<<"otherwise"<<endl;
-            ObsNCau *t= new ObsNCau(k.couvrant,k.couverts,k.cycle);
-            H.insert(t);
-            cout<<"---"<<*t<<endl;
-          }
-    }
-   
-  
-  for (auto s: H) {
-    if (s->cycle )     
-        {
-        cout<<"il y a cycle"<<endl;
-        obs [transitionName.find(s->couvrant.name)->second]=2;
-        } 
-        else{obs[transitionName.find(s->couvrant.name)->second]=1;} 
-      }
-  return obs;
-}
-/*---------------------------------Init Set of  transitions ------------------------------*/
-/*---------------------------------Set_formula_trans()------------------*/
-/*bool net::Set_Formula_Trans(const char * f) {
-  FILE * in ;
-  int i, nb;
-  //	cout<<"ici set formula transitions \n";
-  int pos_trans(TRANSITIONS, string);
-  char Buff[TAILLEBUFF], * z; in = fopen(f, "r");
-  if ( in == NULL) {
-    cout << "file " << f << " doesn't exist" << endl;
-    exit(1);
-  }
-  int nb_formula_trans;
-  fscanf( in , "%d\n", & nb_formula_trans);
-  nb = fread(Buff, 1, TAILLEBUFF - 1, in );
-  Buff[nb] = '\0';
-  z = strtok(Buff, " \t\n");
-  cout << "taille " << TAILLEBUFF << " buff " << Buff << " z: " << z << endl;
-  for (i = 0; i < nb_formula_trans; i++) {
-    cout << " z: " << z << endl;
-    if (z == NULL) {
-      cout << "error in formula trans format " << endl;
-      return false;
-    }
-    string tmp(z);
-    int pos = pos_trans(transitions, tmp);
-    if (pos == -1) {
-      cout << z << "    Error??? : observale transition " << tmp << " doesn't exist \n";
-      //return false;		  
-    } else
-      Formula_Trans.insert(pos);
-    /*cout<<"insertion de :"<<transitions[pos].name<<endl;*/
-    /*z = strtok(NULL, " \t\n");
-    if (z == NULL) {
-      nb = fread(Buff, 1, TAILLEBUFF - 1, in );
-      Buff[nb] = '\0';
-      z = strtok(Buff, " \t\n");
-    }
-  }
-  fclose( in );
-  return true;
-}*/
-/*---------------------------------Set_Interface_trans()------------------*/
-/*bool net::Set_Interface_Trans(const char * f) {
-  FILE * in ;
-  int i, nb;
-  int pos_trans(TRANSITIONS, string);
-  char Buff[TAILLEBUFF], * z; in = fopen(f, "r");
-  if ( in == NULL) {
-    cout << "file " << f << " doesn't exist" << endl;
-    exit(1);
-  }
-  int int_trans;
-  fscanf( in , "%d\n", & int_trans);
-  nb = fread(Buff, 1, TAILLEBUFF - 1, in );
-  Buff[nb] = '\0';
-  z = strtok(Buff, " \t\n");
-  cout << "taille " << TAILLEBUFF << " buff " << Buff << " z: " << z << endl;
-  for (i = 0; i < int_trans; i++) {
-    cout << " z: " << z << endl;
-    if (z == NULL) {
-      cout << "error in interface format " << endl;
-      return false;
-    }
-    string tmp(z);
-    int pos = pos_trans(transitions, tmp);
-    //if(Formula_Trans.find(pos)==Formula_Trans.end())
-    if (pos == -1) {
-      cout << z << "         Error??? : interface transition doesn't exist \n";
-      //	return false;
-    } else
-      InterfaceTrans.insert(pos);
-    z = strtok(NULL, " \t\n");
-    if (z == NULL) {
-      nb = fread(Buff, 1, TAILLEBUFF - 1, in );
-      Buff[nb] = '\0';
-      z = strtok(Buff, " \t\n");
-    }
-  }
-  fclose( in );
-  return true;
-}*/
-/*---------------------------------Set_Non_Observables()------------------*/
-/*void net::Set_Non_Observables() {
-  NonObservable.clear();
-  for (unsigned int i = 0; i < transitions.size(); i++)
-    if (Observable.find(i) == Observable.end()) {
+    
 
-      NonObservable.insert(i);
-    }
-}*/
+  return unobs ;
+}
+    
+
+ 
+
 /*-----------------------pos_trans()--------------------*/
 int pos_trans(TRANSITIONS T, string trans) {
   int pos = 0;
@@ -729,89 +540,7 @@ bool net::addPostQueue(const string & place,
   return true;
 }
 
-/*bool net::addInhibitor(const string & place,
-  const string & trans, int valuation) {
-  int p, t;
-  map < string, int > ::const_iterator pi = placeName.find(place);
-  if (pi == placeName.end())
-    return false;
-  else
-    p = pi -> second;
-  map < string, int > ::const_iterator ti = transitionName.find(trans);
-  if (ti == transitionName.end())
-    return false;
-  else
-    t = ti -> second;
-  transitions[t].addInhibitor(p, valuation);
-  places[p].addInhibitor(t, valuation);
-  return true;
-}
 
-bool net::addPreAuto(const string & place,
-  const string & trans,
-    const string & valuation) {
-  int p, t, v;
-  map < string, int > ::const_iterator pi = placeName.find(place);
-  if (pi == placeName.end() || places[pi -> second].isQueue())
-    return false;
-  else
-    p = pi -> second;
-  map < string, int > ::const_iterator ti = transitionName.find(trans);
-  if (ti == transitionName.end())
-    return false;
-  else
-    t = ti -> second;
-  map < string, int > ::const_iterator pv = placeName.find(valuation);
-  if (pv == placeName.end() || places[pv -> second].isQueue())
-    return false;
-  else
-    v = pv -> second;
-  transitions[t].addPreAuto(p, v);
-  places[p].addPostAuto(t, v);
-  return true;
-}
-
-bool net::addPostAuto(const string & place,
-  const string & trans,
-    const string & valuation) {
-  int p, t, v;
-  map < string, int > ::const_iterator pi = placeName.find(place);
-  if (pi == placeName.end() || places[pi -> second].isQueue())
-    return false;
-  else
-    p = pi -> second;
-  map < string, int > ::const_iterator ti = transitionName.find(trans);
-  if (ti == transitionName.end())
-    return false;
-  else
-    t = ti -> second;
-  map < string, int > ::const_iterator pv = placeName.find(valuation);
-  if (pv == placeName.end() || places[pi -> second].isQueue())
-    return false;
-  else
-    v = pv -> second;
-  transitions[t].addPostAuto(p, v);
-  places[p].addPreAuto(t, v);
-  return true;
-}
-
-bool net::addReset(const string & place,
-  const string & trans) {
-  int p, t;
-  map < string, int > ::const_iterator pi = placeName.find(place);
-  if (pi == placeName.end())
-    return false;
-  else
-    p = pi -> second;
-  map < string, int > ::const_iterator ti = transitionName.find(trans);
-  if (ti == transitionName.end())
-    return false;
-  else
-    t = ti -> second;
-  transitions[t].addReset(p);
-  places[p].addReset(t);
-  return true;
-}*/
 
 /* Visualisation */
 ostream & operator << (ostream & os,
@@ -834,21 +563,7 @@ ostream & operator << (ostream & os,
     } else
       os << "place " << setw(4) << i << ":" << p -> name << ":" << p -> marking << " <..>, cp(" << p -> capacity << ")" << endl;
   }
- /* os << "********** transitions  de la formule  **********" << endl;
-  for (Set::const_iterator h = R.Formula_Trans.begin(); !(h == R.Formula_Trans.end()); h++)
-    cout << R.transitions[ * h].name << endl;
-  os << "********** transitions  de l'interface  **********" << endl;
-  for (Set::const_iterator h = R.InterfaceTrans.begin(); !(h == R.InterfaceTrans.end()); h++)
-    cout << R.transitions[ * h].name << endl;
-  os << "Nombre de transitions observable:" << R.Observable.size() << endl;
-  os << "********** transitions observables **********" << endl;
-  for (Set::const_iterator h = R.Observable.begin(); !(h == R.Observable.end()); h++)
-    cout << R.transitions[ * h].name << endl;
-  os << "Nombre de transitions non observees:" << R.NonObservable.size() << endl;
-  os << "********** transitions  non observees **********" << endl;
-  for (Set::const_iterator h = R.NonObservable.begin(); !(h == R.NonObservable.end()); h++)
-    cout << R.transitions[ * h].name << endl;
-  i = 0;*/
+
   os << "Nombre global de transitions :" << R.nbTransition() << endl;
   os << "********** transitions  **********" << endl;
   for (TRANSITIONS::const_iterator t = R.transitions.begin(); t != R.transitions.end(); t++, i++) {
