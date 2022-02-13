@@ -41,6 +41,7 @@ int main(int argc, char** argv) {
 
     unobs=R.calcul1();
     
+    cout<<"transitions unobservées trouvées"<<endl;
     for (long unsigned int i = 0; i < R.transitions.size(); i++ )
     {
          if ((unobs.find(i))== unobs.end())
@@ -49,19 +50,71 @@ int main(int argc, char** argv) {
          }  
     }	
 	RdPBDD DR(R,obs,unobs, b);
-   	MDGraph g;
+	    cout<<"RdpBDD construit"<<endl;
+    MDGraph g;
 
     chemins= DR.chem_obs(g,obs);
+ /*  cout << " n de chemins " << chemins.size() << endl;
+    for (auto i: chemins)
+    {   cout << " le chemin : "  << endl;
+        for (auto k:i){
+            cout <<"t"<< k+1  << endl;
+            }
+    }*/
 
+
+ 
+
+/*for(auto i:g.GONodes)
+{
+cout<<"le noeud num "<<i->class_state.id()<<" a comme succ: "<<endl;
+    for(auto k: i->Successors){
+        cout<<"**t"<<k.second+1<<" jusqu'a "<<k.first->class_state.id()<<endl;
+        }
+                cout<<"**"<<endl;
+}
+  
+ 
+ 
+*/
 
  for (auto i: chemins)
  {
-
+ // cout<< "---un nouv chem----"<<endl;
   vector<int> chem_abs;
   chem_abs= DR.chem_abs(i,g);
   
   abstrait.insert(chem_abs); }
-
+/*  
+  cout<< "************************ ********************** ************************"<<endl;
+  cout<< "************************ ********************** ************************"<<endl; 
+   cout<< "************************    FINAL RESULT      ************************"<<endl;
+cout<<"                                                               "<<endl;
+cout<<"                                                               "<<endl;
+  
+cout<< "************************ observable transitions   ************************"<<endl;
+  for(auto i:obs)
+  {
+  cout<<"t"<<i.first+1<<endl;
+  }
+  
+  cout<< "************************ observable paths ************************"<<endl;
+ }
+ for (auto i: chemins)
+ {
+  cout<< "--- observable path ----"<<endl;
+  for (auto tr:i)
+  cout<<"t"<<tr+1<<endl;
+  }
+  
+    cout<< "************************  abstract paths ************************"<<endl;
+ for (auto i: abstrait)
+ {
+  cout<< "--- abstract path ----"<<endl;
+  for (auto tr:i)
+  cout<<"t"<<tr+1<<endl;
+  
+  }*/
  
  tps = getTime() - d;
 
@@ -72,9 +125,10 @@ int main(int argc, char** argv) {
     cout<< "trans obs "<<obs.size()<<endl;
   for (auto i: abstrait)
  {
-
-  for (auto tr:i){  cout<<"t"<<tr+1;}
-    cout<< endl;
+  cout<< "--- abstract path ----"<<endl;
+  for (auto tr:i)
+  cout<<"t"<<tr+1;
+  
   }
 	return 0;
  }
