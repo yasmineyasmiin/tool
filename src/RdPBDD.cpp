@@ -51,7 +51,7 @@ bdd Trans::operator()(const bdd& n) const {
 	res = bdd_replace(res, pair);
 	return res;
 }
-//Franchissement arrière
+//Franchissement arriÃ¨re
 bdd Trans::operator[](const bdd& n) const {
 	bdd res = bdd_relprod(n,prerel,var);
 	res = bdd_replace(res, pair);
@@ -169,7 +169,7 @@ RdPBDD::RdPBDD(const net &R, map <int,int> observables,Set NonObservables, int B
 			Postcond=Postcond & (v[*it]>=postc[*it]);
 			prerel = prerel & (vp[*it] == (v[*it] - postc[*it] + prec[*it]));
 			//___________________
-			// capacité
+			// capacitÃ©
 			if (R.places[*it].hasCapacity())
 				rel = rel & (vp[*it] <= bvec_con(nbbit[*it], R.places[*it].capacity));
 			np++;
@@ -279,7 +279,7 @@ bdd RdPBDD:: ReachableBDD3()
 	//cout << "TPS CONSTRUCTION : "<<tps<<endl;
 	return Reached;
 }
-/*----------------Fermeture transitive sur les transitions non observées ---*/
+/*----------------Fermeture transitive sur les transitions non observÃ©es ---*/
 bdd RdPBDD::Accessible_epsilon2(bdd Init)
 {
  
@@ -417,7 +417,7 @@ Set RdPBDD::firable_obs(bdd State)
   return res;
 }
 
-/**-----------------------les points de sortie d'un agr avec une transition  donnée t ---------*/
+/**-----------------------les points de sortie d'un agr avec une transition  donnÃ©e t ---------*/
 
 void RdPBDD::bdd_firable_obs(Class_Of_State * agr, int t)
 {
@@ -546,7 +546,7 @@ set < chem > RdPBDD::chem_obs(MDGraph & g,map <int,int> tranobs) {
          else{t=*e.second.begin();
                   sw.push_back(t);
 }
-       // //cout<<"+++++++++++++++on a trouvé la transition t"<<t+1<<endl;
+       // //cout<<"+++++++++++++++on a trouvÃ© la transition t"<<t+1<<endl;
          e.second.erase(t);
 
        
@@ -686,7 +686,7 @@ chem RdPBDD::chem_abs(chem ch,MDGraph& g )
     trans=*(ch.end()-1) ;
     //cout<<"on traite "<< trans+1<<endl;
     agr_entree=point_entree.top();
-    //cout<<" l'agr traité "<<agr_entree.first->class_state.id()<<endl;
+    //cout<<" l'agr traitÃ© "<<agr_entree.first->class_state.id()<<endl;
     point_entree.pop();//effacer l'element le dernier element 
     cible=agr_entree.second;
     agr=agr_entree.first;
@@ -706,7 +706,7 @@ chem RdPBDD::chem_abs(chem ch,MDGraph& g )
    return ch_abstrait;
 }
 
-///////----------------- trouver un chemain de la source à cible dans un agregat agr---
+///////----------------- trouver un chemain de la source Ã  cible dans un agregat agr---
 vector<int> RdPBDD::Sub_path_agregate(bdd *source,bdd cible,Class_Of_State * agr )
 {           
     vector<int> ch_agregat;
@@ -798,7 +798,7 @@ bool RdPBDD::Set_Bloc(bdd &S) const
 	return ((S&Mt)!=bddfalse);
 		//BLOCAGE
 }
-/*-------------------------Set_Div() à revoir -----------------------------*/
+/*-------------------------Set_Div() Ã  revoir -----------------------------*/
 bool RdPBDD::Set_Div(bdd &S) const
 {
 	Set::const_iterator i;
@@ -838,7 +838,7 @@ bdd RdPBDD::FrontiereNodes1(bdd From, int t)
 	res=res | (From & relation[t].Precond);
     return res;
 }
-/*-------- Produit synchronisé à la volée de n graphes d'observation : Adaptation à la capture des séquences bloquantes et les séquences divergentes----------------------*/
+/*-------- Produit synchronisÃ© Ã  la volÃ©e de n graphes d'observation : Adaptation Ã  la capture des sÃ©quences bloquantes et les sÃ©quences divergentes----------------------*/
 void RdPBDD::GeneralizedSynchProduct1(Modular_Obs_Graph& Gv, int NbSubnets,RdPBDD* Subnets[] ,int nbbddvar) 
 {
     //cout<<"_____________  GeneralizedSynchProduct1  _________________________"<<NbSubnets<<"sous-reseaux "<<endl;
@@ -958,7 +958,7 @@ void RdPBDD::GeneralizedSynchProduct1(Modular_Obs_Graph& Gv, int NbSubnets,RdPBD
 		    pos->Predecessors.insert(pos->Predecessors.begin(),Modular_Edge(e.first.first,tmp));
 		    Gv.addArc();
 		    delete Meta_State;
-		    //Neoud déja rencontré ;
+		    //Neoud dÃ©ja rencontrÃ© ;
 		  }
 		}
 	  }
