@@ -1273,13 +1273,13 @@ static int yy_get_next_buffer (void)
 }
 
 #endif
-
 #ifndef YY_NO_INPUT
 #ifdef __cplusplus
     static int yyinput (void)
 #else
     static int input  (void)
 #endif
+
 
 {
 	int c;

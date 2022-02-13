@@ -1146,6 +1146,7 @@ BDD bdd_delref(BDD root)
    if (LOW(root) == -1)
       return bdd_error(BDD_ILLBDD);
 
+   
    /* if the following line is present, fails there much earlier */ 
    if (!HASREF(root)) bdd_error(BDD_BREAK); /* distinctive */
    

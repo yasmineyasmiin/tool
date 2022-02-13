@@ -151,28 +151,30 @@
  /usr/include/c++/9/map /usr/include/c++/9/bits/stl_tree.h \
  /usr/include/c++/9/ext/aligned_buffer.h \
  /usr/include/c++/9/bits/stl_map.h /usr/include/c++/9/bits/stl_multimap.h \
- /usr/include/c++/9/bits/erase_if.h /usr/include/c++/9/ext/hash_map \
- /usr/include/c++/9/backward/backward_warning.h \
- /usr/include/c++/9/backward/hashtable.h /usr/include/c++/9/vector \
+ /usr/include/c++/9/bits/erase_if.h /usr/include/c++/9/algorithm \
+ /usr/include/c++/9/bits/stl_algo.h \
+ /usr/include/c++/9/bits/algorithmfwd.h \
+ /usr/include/c++/9/bits/stl_heap.h /usr/include/c++/9/bits/stl_tempbuf.h \
  /usr/include/c++/9/bits/stl_construct.h \
+ /usr/include/c++/9/bits/uniform_int_dist.h /usr/include/c++/9/limits \
+ parser/Net.h /usr/include/c++/9/vector \
  /usr/include/c++/9/bits/stl_uninitialized.h \
  /usr/include/c++/9/bits/stl_vector.h \
  /usr/include/c++/9/bits/stl_bvector.h /usr/include/c++/9/bits/vector.tcc \
- /usr/include/c++/9/iterator /usr/include/c++/9/bits/stream_iterator.h \
- /usr/include/c++/9/algorithm /usr/include/c++/9/bits/stl_algo.h \
- /usr/include/c++/9/bits/algorithmfwd.h \
- /usr/include/c++/9/bits/stl_heap.h /usr/include/c++/9/bits/stl_tempbuf.h \
- /usr/include/c++/9/bits/uniform_int_dist.h /usr/include/c++/9/limits \
- /usr/include/c++/9/backward/hash_fun.h parser/Net.h \
  /usr/include/c++/9/set /usr/include/c++/9/bits/stl_set.h \
  /usr/include/c++/9/bits/stl_multiset.h /usr/include/c++/9/cstddef \
- parser/RdPMonteur.h /usr/include/c++/9/cstring /usr/include/string.h \
- /usr/include/strings.h parser/Net.cpp parser/Net.h Causality/src/bdd.h \
- Causality/src/fdd.h Causality/src/bdd.h src/RdPBDD.h \
- /usr/include/c++/9/stack /usr/include/c++/9/deque \
- /usr/include/c++/9/bits/stl_deque.h /usr/include/c++/9/bits/deque.tcc \
- /usr/include/c++/9/bits/stl_stack.h src/MDGraph.h src/Class_of_state.h \
- /usr/include/c++/9/unordered_map /usr/include/c++/9/bits/hashtable.h \
+ /usr/include/c++/9/ext/hash_map \
+ /usr/include/c++/9/backward/backward_warning.h \
+ /usr/include/c++/9/backward/hashtable.h /usr/include/c++/9/iterator \
+ /usr/include/c++/9/bits/stream_iterator.h \
+ /usr/include/c++/9/backward/hash_fun.h parser/RdPMonteur.h \
+ /usr/include/c++/9/cstring /usr/include/string.h /usr/include/strings.h \
+ parser/Net.cpp parser/Net.h Causality/src/bdd.h Causality/src/fdd.h \
+ Causality/src/bdd.h src/RdPBDD.h /usr/include/c++/9/stack \
+ /usr/include/c++/9/deque /usr/include/c++/9/bits/stl_deque.h \
+ /usr/include/c++/9/bits/deque.tcc /usr/include/c++/9/bits/stl_stack.h \
+ src/MDGraph.h src/Class_of_state.h /usr/include/c++/9/unordered_map \
+ /usr/include/c++/9/bits/hashtable.h \
  /usr/include/c++/9/bits/hashtable_policy.h \
  /usr/include/c++/9/bits/unordered_map.h /usr/include/c++/9/list \
  /usr/include/c++/9/bits/stl_list.h \

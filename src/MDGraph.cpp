@@ -28,7 +28,7 @@ void MDGraph::insert(Class_Of_State *c)
 	c->Visited=false;
 	this->GONodes.push_back(c);
 	nbStates++;
-	cout<<"on ajoute ag => nb agregats= "<<nbStates<<endl;
+	//cout<<"on ajoute ag => nb agregats= "<<nbStates<<endl;
 }
 
 /*----------------------NbBddNod()------------------------*/
@@ -66,9 +66,9 @@ void MDGraph::printCompleteInformation()
 	cout<< "\n\tNB MARKING : "<< nbMarking;
 	cout<< "\n\tNB NODES : "<< nbStates;
 	cout<<"\n\tNB ARCS : " <<nbArcs<<endl;
-	cout<<" \n\nCOMPLETE INFORMATION ?(y/n)\n";
-	char c;
-	cin>>c;
+	//cout<<" \n\nCOMPLETE INFORMATION ?(y/n)\n";
+	//char c;
+	//cin>>c;
 	//InitVisit(initialstate,n);
 	Tab=new bdd[(int)nbStates];
 	size_t n=1;
@@ -80,11 +80,11 @@ void MDGraph::printCompleteInformation()
 	//int toto;cin>>toto;
 	//bdd Union=UnionMetaState(initialstate,1);
 	//cout<<"a titre indicatif taille de l'union : "<<bdd_nodecount(Union)<<endl;
-	if(c=='y'||c=='Y')
+	/*if(c=='y'||c=='Y')
 	{
 		size_t n=1;
 		 printGraph(initialstate,n);
-	}
+	}*/
 	
 	
 }

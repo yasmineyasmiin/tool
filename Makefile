@@ -2,7 +2,7 @@
 # Programm name #
 ################
 
-PROGRAM = StructAnal
+PROGRAM = StructAnalysis
 
 ##################
 # Names of file  #

@@ -97,9 +97,9 @@ public:
   net(const char *file,const char*Obs="", const char* Int="");
   /* Monteur */
 
-  void caus(bool type=false,int nbn=0);
-  set<ObsNCau*> observation(RelaCausal &r);
-  void Obs_causee(ObsNCau & s);
+  //void caus(bool type=false,int nbn=0);
+  //set<ObsNCau*> observation(RelaCausal &r);
+  //void Obs_causee(ObsNCau & s);
   //map<int,int>calcul();
   set<int> calcul1();//mathode jorg
   RelaCausal* rech_couple_cause(Transition t);
