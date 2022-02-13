@@ -1,0 +1,52 @@
+#ifndef MODULAR_CLASS_OF_STATE
+#define MODULAR_CLASS_OF_STATE
+#include"Modular_Edge.hpp"
+#include<hash_map.h>
+#include<set.h>
+#include"bdd.h"
+//_____________________   Vecteur d'entier : représente les id des bdd relatifs à un état synchronisé de n GO _________________________
+typedef vector<bdd> SynchronizedState;
+struct less_SynchronizedState
+{
+	bool operator()(const SynchronizedState,const SynchronizedState)const;
+};
+inline bool less_SynchronizedState::operator ()(const SynchronizedState p1,const SynchronizedState p2)const
+{
+	
+	for(int i=0;i<p1.size();i++)
+		if(p1[i].id()>p2[i].id())
+			return false;
+	return true;
+	
+}
+typedef set<SynchronizedState, less_SynchronizedState> Gen_Prod_Synch;
+class Modular_Class_Of_State
+{
+	friend struct less_modular_class_of_state;
+	public:
+		Modular_Class_Of_State(){boucle=blocage=Visited=0;}
+		SynchronizedState State;
+		bool boucle; 
+		bool blocage;
+		bool Visited;
+		Modular_Edges Predecessors;
+		Modular_Edges Successors;
+		friend ostream& operator<<(ostream &os,const Modular_Class_Of_State &c){
+		os<<"{";
+		for(int k=0;k<c.State.size();k++)
+			os<<c.State[k].id()<<", ";
+		os<<"}";
+		return(os);}
+};
+/*--------------------------------------------------------*/
+/*struct less_modular_class_of_state
+{
+	bool operator()(const Modular_Class_Of_State*,const Modular_Class_Of_State*)const;
+};
+inline bool less_modular_class_of_state::operator ()(const Modular_Class_Of_State *c1,const Modular_Class_Of_State *c2)const
+{
+	
+	return (c1->State<c2->State)||(c1->blocage<c2->blocage)||(c1->boucle<c1->boucle);
+	
+}*/
+#endif
