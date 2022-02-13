@@ -19,7 +19,7 @@ int nbmetastate;
 double old_size;
 const vector<class Place> *vplaces = NULL;
 void my_error_handler(int errcode) {
-    cout<<"errcode = "<<errcode<<endl;
+    //cout<<"errcode = "<<errcode<<endl;
 	if (errcode == BDD_RANGE) {
 		// Value out of range : increase the size of the variables...
 		// but which one???
@@ -51,7 +51,7 @@ bdd Trans::operator()(const bdd& n) const {
 	res = bdd_replace(res, pair);
 	return res;
 }
-//Franchissement arrière
+//Franchissement arriÃ¨re
 bdd Trans::operator[](const bdd& n) const {
 	bdd res = bdd_relprod(n,prerel,var);
 	res = bdd_replace(res, pair);
@@ -64,6 +64,7 @@ bdd Trans::operator[](const bdd& n) const {
 
 RdPBDD::RdPBDD(const net &R, map <int,int> observables,Set NonObservables, int BOUND,bool init){
     int nbPlaces=R.places.size(), i, domain;
+    int nbTransitions=R.transitions.size();
 	vector<Place>::const_iterator p;
 	
 	bvec *v = new bvec[nbPlaces];
@@ -84,8 +85,9 @@ RdPBDD::RdPBDD(const net &R, map <int,int> observables,Set NonObservables, int B
 	NonObservable=NonObservables;
 	transitionName=R.transitionName;
 	Nb_places=R.places.size();
-	cout<<"Nombre de places : "<<Nb_places<<endl; 
-	cout<<"Derniere place : "<<R.places[Nb_places-1].name<<endl; 
+	//cout<<"Nombre de places : "<<Nb_places<<endl; 
+		//cout<<"Nombre de transitions : "<<nbTransitions<<endl; 
+	//cout<<"Derniere place : "<<R.places[Nb_places-1].name<<endl; 
   /* place domain, place bvect, place initial marking and place name */
 	// domains	
 	i=0;
@@ -167,7 +169,7 @@ RdPBDD::RdPBDD(const net &R, map <int,int> observables,Set NonObservables, int B
 			Postcond=Postcond & (v[*it]>=postc[*it]);
 			prerel = prerel & (vp[*it] == (v[*it] - postc[*it] + prec[*it]));
 			//___________________
-			// capacité
+			// capacitÃ©
 			if (R.places[*it].hasCapacity())
 				rel = rel & (vp[*it] <= bvec_con(nbbit[*it], R.places[*it].capacity));
 			np++;
@@ -209,17 +211,11 @@ bdd RdPBDD:: ReachableBDD1()
 		int Current_size=bdd_nodecount(M2);
 		if(MaxIntBdd<Current_size)
 		  MaxIntBdd=Current_size;
-		//cout<<"Iteration numero "<<NbIt<<" nb node de reached :"<<bdd_nodecount(M2)<<endl;		
-//		cout << bdd_nodecount(M2) << endl;
+
 	}
-	cout << endl;
+
 	tps = ((double)(clock()) / CLOCKS_PER_SEC) - d;
-	cout<<"-----------------------------------------------------\n";
-	cout << "CONSTRUCTION TIME  " << tps << endl;
-	cout<<"Max Intermediary BDD "<<MaxIntBdd<<endl;
-	cout<<"Nombre d'iteration : "<<NbIt<<endl;
-	//bdd Cycle=EmersonLey(M2,0);
-	//cout<<Cycle.id()<<endl;
+
 	return M2;
 }
 bdd RdPBDD:: ReachableBDD2()
@@ -246,14 +242,14 @@ bdd RdPBDD:: ReachableBDD2()
 		if(MaxIntBdd<Current_size)
 		  MaxIntBdd=Current_size;
 		//cout<<"Iteration numero "<<NbIt<<" nb node de reached :"<<bdd_nodecount(M2)<<endl;		
-//		cout << bdd_nodecount(M2) << endl;
+//		//cout << bdd_nodecount(M2) << endl;
 	}
-	cout << endl;
+	//cout << endl;
 	tps = ((double)(clock()) / CLOCKS_PER_SEC) - d;
-	cout<<"-----------------------------------------------------\n";
-	cout << "CONSTRUCTION TIME  " << tps << endl;
-	cout<<"Max Intermediary BDD "<<MaxIntBdd<<endl;
-	cout<<"Nombre d'iteration : "<<NbIt<<endl;
+	//cout<<"-----------------------------------------------------\n";
+	//cout << "CONSTRUCTION TIME  " << tps << endl;
+	//cout<<"Max Intermediary BDD "<<MaxIntBdd<<endl;
+	//cout<<"Nombre d'iteration : "<<NbIt<<endl;
 	return M2;
 }
 bdd RdPBDD:: ReachableBDD3()
@@ -271,13 +267,13 @@ bdd RdPBDD:: ReachableBDD3()
   	    New=succ-Reached;
 	    From=New;
 	    Reached=Reached | New;
-	    cout<<"Iteration numero "<<NbIt<<" nb node de reached :"<<bdd_nodecount(Reached)<<endl;		
+	    //cout<<"Iteration numero "<<NbIt<<" nb node de reached :"<<bdd_nodecount(Reached)<<endl;		
 	}while(New!=bddfalse);
 	tps=(double)clock() / (double)CLOCKS_PER_SEC-d;
-	cout << "TPS CONSTRUCTION : "<<tps<<endl;
+	//cout << "TPS CONSTRUCTION : "<<tps<<endl;
 	return Reached;
 }
-/*----------------Fermeture transitive sur les transitions non observées ---*/
+/*----------------Fermeture transitive sur les transitions non observÃ©es ---*/
 bdd RdPBDD::Accessible_epsilon2(bdd Init)
 {
  
@@ -299,28 +295,30 @@ bdd RdPBDD::Accessible_epsilon(bdd From)
 {
   bdd M1;
   bdd M2=From;
-  int it=0;
+  //int it=0;
+  //cout<<"Ici accessible epsilon"<<endl;
   do{  
         M1=M2;
 	for(Set::const_iterator i=NonObservable.begin();!(i==NonObservable.end());i++)
 	  {
-       
+         // cout<<" unobs : "<<transitions[*i].name<<endl;
 	    bdd succ= relation[(*i)](M2);	 
 	    M2=succ|M2;
 	  }	  
-	TabMeta[nbmetastate]=M2;
-	int intsize=bdd_anodecount(TabMeta,nbmetastate+1);
-	if(MaxIntBdd<intsize)
-	    MaxIntBdd=intsize;	
-	it++;
+	//TabMeta[nbmetastate]=M2;
+	//int intsize=bdd_anodecount(TabMeta,nbmetastate+1);
+	//if(MaxIntBdd<intsize)
+	 //   MaxIntBdd=intsize;
+	//it++;
 	//	cout << bdd_nodecount(M2) << endl;
   }while(M1!=M2);
   //cout << endl;
+   // cout<<"Fin accessible epsilon"<<endl;
 	return M2;
 }/*------------------------  StepForward()  --------------*/
 bdd RdPBDD::StepForward2(bdd From)
 {
-  // cout<<"Debut Step Forward \n";
+  // //cout<<"Debut Step Forward \n";
   bdd Res;
   for(Set::const_iterator i=NonObservable.begin();!(i==NonObservable.end());i++)
   {
@@ -346,13 +344,13 @@ bdd RdPBDD::StepForward(bdd From)
 bdd RdPBDD::StepBackward2(bdd From)
 {
   bdd Res;
-  cout<<"Ici Step Back : From.id() = "<<From.id()<<endl;
+  //cout<<"Ici Step Back : From.id() = "<<From.id()<<endl;
    for(vector<Trans>::const_iterator t=relation.begin();t!=relation.end();t++)
    {
        bdd succ = (*t)[From];
        Res=Res|succ;
   }
-  cout<<"Res.id() = "<<Res.id()<<endl;
+  //cout<<"Res.id() = "<<Res.id()<<endl;
   return Res;
 }
 /*------------------------  StepBackward()  --------------*/
@@ -372,15 +370,15 @@ pair <int,bdd> RdPBDD::StepBackward1(bdd From,Class_Of_State * agr )
 pair<int,bdd> p;
  for(auto t : NonObservable )
 	{
-	    cout<<"on traite transition "<<t+1<<endl; 
+	    //cout<<"on traite transition "<<t+1<<endl; 
         bdd succ = (relation[t])[From];
-        cout<<"on aura le bdd  "<<succ<<endl;  
+        //cout<<"on aura le bdd  "<<succ<<endl;  
 
 
         //la fonction qui retourne le bdd precedent avec la transition t 
        
         if ( (succ!=bdd_false() )&((succ &= agr->class_state)!=bdd_false() )){
-        cout<<"non null et appartient a agr !  "<<endl;  
+        //cout<<"non null et appartient a agr !  "<<endl;  
          p.first=t;
         p.second=succ;
         break;
@@ -413,7 +411,7 @@ Set RdPBDD::firable_obs(bdd State)
   return res;
 }
 
-/**-----------------------les points de sortie d'un agr avec une transition  donnée t ---------*/
+/**-----------------------les points de sortie d'un agr avec une transition  donnÃ©e t ---------*/
 
 void RdPBDD::bdd_firable_obs(Class_Of_State * agr, int t)
 {
@@ -425,7 +423,7 @@ void RdPBDD::bdd_firable_obs(Class_Of_State * agr, int t)
 	  res.insert(*i);}
    }
   return res;*/
-  cout<<"les differents bdd de l agregat "<<agr->class_state<<endl;
+  //cout<<"les differents bdd de l agregat "<<agr->class_state<<endl;
 
 }
 
@@ -511,20 +509,20 @@ set < chem > RdPBDD::chem_obs(MDGraph & g,map <int,int> tranobs) {
    }
    g.setInitialState(c);               // init
    g.insert(c);
-   cout << "premier agregat construit " << endl;
+  // //cout << "premier agregat construit " << endl;
    g.nbMarking += bdd_pathcount(c -> class_state);
-   for (auto f: fire) {
-      cout << "le nb de fires de"<<c->class_state.id()<<" est " << fire.size() << " : t" << f+1 << endl;
-   }
+  /* for (auto f: fire) {
+      //cout << "le nb de fires de"<<c->class_state.id()<<" est " << fire.size() << " : t" << f+1 << endl;
+   }*/
    while (!st.empty()) {
-     cout<<"il reste des elmts dans st " <<endl; 
+    // //cout<<"il reste des elmts dans st " <<endl; 
       Pair e = st.top();
       st.pop();
       nbmetastate--;
      
       if (!e.second.empty()) //firable non vide 
       {
-         cout<<"il reste des fire" <<endl;   
+        // //cout<<"il reste des fire" <<endl;   
         //choisir transition des transitions firables  
          int t = choisir(cov,e.second);
          if (t!=-1){ancien=false;
@@ -542,42 +540,42 @@ set < chem > RdPBDD::chem_obs(MDGraph & g,map <int,int> tranobs) {
          else{t=*e.second.begin();
                   sw.push_back(t);
 }
-        cout<<"+++++++++++++++on a trouvé la transition t"<<t+1<<endl;
+       // //cout<<"+++++++++++++++on a trouvÃ© la transition t"<<t+1<<endl;
          e.second.erase(t);
 
        
-         cout << "on ajoute t"<<t+1 <<" au chemin"<< endl;
+        // //cout << "on ajoute t"<<t+1 <<" au chemin"<< endl;
 
-         cout << "ici on couvre  la transition t" << t+1 <<"qui a un second de "<<tranobs[t]<< " et le nb de trans couv = " << cov.size() <<"/"<<Observable.size()<< endl;
+        // //cout << "ici on couvre  la transition t" << t+1 <<"qui a un second de "<<tranobs[t]<< " et le nb de trans couv = " << cov.size() <<"/"<<Observable.size()<< endl;
          st.push(e);
 
     
 
          double nbnode;
          reached_class = new Class_Of_State; {
-            cout << "on traite un bdd avac la trans t" <<t+1<< endl;
+           // //cout << "on traite un bdd avac la trans t" <<t+1<< endl;
             bdd Complete_meta_state=Accessible_epsilon(get_successor(e.first.second,t));
-            cout << "on crre un bdd" << endl;
+            //cout << "on crre un bdd" << endl;
             reached_class -> class_state = Complete_meta_state;
             Class_Of_State * pos = g.find(reached_class);
             nbnode = bdd_pathcount(reached_class -> class_state);
             
             if (!pos) // nouvel agregat
             {
-               cout << "nouvel agregat" << endl;
+              // //cout << "nouvel agregat" << endl;
                fire = firable_obs(Complete_meta_state);
-               for (auto f: fire) {
-                  cout << "le nb de fires de  "<<reached_class->class_state.id()<<" est " << fire.size() << " : t" << f+1 << endl;
-               }
+              /* for (auto f: fire) {
+                 //cout << "le nb de fires de  "<<reached_class->class_state.id()<<" est " << fire.size() << " : t" << f+1 << endl;
+               }*/
                //st.push(Pair(couple(reached_class, Complete_meta_state), fire));
                nbmetastate++;
                e.first.first -> Successors.insert(e.first.first -> Successors.begin(), Edge(reached_class, t));
                reached_class -> Predecessors.insert(reached_class -> Predecessors.begin(), Edge(e.first.first, t));
-               cout<<"les pred sont avec t"<<Edge(e.first.first, t).second+1<<endl;
+                // //cout<<"les pred sont avec t"<<Edge(e.first.first, t).second+1<<endl;
                g.addArc();
                g.insert(reached_class); //ajouter l'agregat 
                if (fire.empty()) {
-                cout << "pas de successeurs " << endl;
+                //cout << "pas de successeurs " << endl;
 
                 if(!ancien){cto.insert(sw);}
                 reinit_cycle(sw,tranobs);
@@ -585,25 +583,25 @@ set < chem > RdPBDD::chem_obs(MDGraph & g,map <int,int> tranobs) {
                   
                   
                   sw.pop_back();
-                  cout << "on enleve du chemin"<< endl;
+                  //cout << "on enleve du chemin"<< endl;
 
                } else {
-                 cout << "il y a  de successeurs " << endl;
+                 //cout << "il y a  de successeurs " << endl;
                   st.push(Pair(couple(reached_class, Complete_meta_state), fire));
                }
 
             } else {  //agregat existant
-               cout << "agregat deja existant" << endl;
+              // //cout << "agregat deja existant" << endl;
                if(!ancien){cto.insert(sw);}
                reinit_cycle(sw,tranobs);
                 
                sw.pop_back();
                ancien=true;
-               cout << "on enleve du chemin"<< endl;
+               //cout << "on enleve du chemin"<< endl;
                delete reached_class;
                e.first.first -> Successors.insert(e.first.first -> Successors.begin(), Edge(pos, t));
                pos -> Predecessors.insert(pos -> Predecessors.begin(), Edge(e.first.first, t));
-                cout<<"les pred existe sont avec "<<Edge(e.first.first, t).second+1<<endl;
+               // //cout<<"les pred existe sont avec "<<Edge(e.first.first, t).second+1<<endl;
                g.addArc();
             }
          }
@@ -637,7 +635,7 @@ pt_entr.push(p);
 //cout<<"l' 1 agr "<<agr->class_state.id()<<endl; 
 //cout<<"le 1 bdd "<<entree<<endl; 
 
-// cout<<"les points de sortie avec  le t"<< ch[0]<<" sont : "<<FrontiereNodes1(agr->class_state,ch[0])<<endl; 
+// //cout<<"les points de sortie avec  le t"<< ch[0]<<" sont : "<<FrontiereNodes1(agr->class_state,ch[0])<<endl; 
 
 
 for (std::vector<int>::iterator k = ch.begin() ; k != ch.end()-1; k++ )
@@ -660,7 +658,7 @@ p.second=entree;
  pt_entr.push(p);
 
 }
-cout<<"entrey points found"<<endl;
+//cout<<"entrey points found"<<endl;
 return  pt_entr;
 }
 
@@ -680,9 +678,9 @@ chem RdPBDD::chem_abs(chem ch,MDGraph& g )
    while(!point_entree.empty())
    {
     trans=*(ch.end()-1) ;
-    cout<<"on traite "<< trans+1<<endl;
+    //cout<<"on traite "<< trans+1<<endl;
     agr_entree=point_entree.top();
-    cout<<" l'agr traité "<<agr_entree.first->class_state.id()<<endl;
+    //cout<<" l'agr traitÃ© "<<agr_entree.first->class_state.id()<<endl;
     point_entree.pop();//effacer l'element le dernier element 
     cible=agr_entree.second;
     agr=agr_entree.first;
@@ -690,7 +688,7 @@ chem RdPBDD::chem_abs(chem ch,MDGraph& g )
     source =FrontiereNodes1(agr->class_state,trans);}
     if(i==1){ source= (relation[trans])[source];}
     ch_agregat=Sub_path_agregate(&source,cible,agr);
-     cout<<"sub_path found "<<endl;
+     //cout<<"sub_path found "<<endl;
      ch_abstrait.insert( ch_abstrait.begin(), trans);
      ch_abstrait.insert( ch_abstrait.begin(), ch_agregat.begin(), ch_agregat.end());
    ch.pop_back();
@@ -702,7 +700,7 @@ chem RdPBDD::chem_abs(chem ch,MDGraph& g )
    return ch_abstrait;
 }
 
-///////----------------- trouver un chemain de la source à cible dans un agregat agr---
+///////----------------- trouver un chemain de la source Ã  cible dans un agregat agr---
 vector<int> RdPBDD::Sub_path_agregate(bdd *source,bdd cible,Class_Of_State * agr )
 {           
     vector<int> ch_agregat;
@@ -714,7 +712,7 @@ vector<int> RdPBDD::Sub_path_agregate(bdd *source,bdd cible,Class_Of_State * agr
     bdd egalite= cible & courant;
 
 
-   cout<<"a difference between source and target "<< (egalite == bdd_false())<<endl;
+   //cout<<"a difference between source and target "<< (egalite == bdd_false())<<endl;
     while(egalite == bdd_false())
         { 
           couple=StepBackward1(courant,agr);
@@ -722,7 +720,7 @@ vector<int> RdPBDD::Sub_path_agregate(bdd *source,bdd cible,Class_Of_State * agr
            courant=couple.second;
            egalite= (cible & courant);
 
-            cout<<"a difference between source and target  "<< (egalite == bdd_false())<<endl;
+            //cout<<"a difference between source and target  "<< (egalite == bdd_false())<<endl;
         }
 
 *source= courant;   
@@ -760,7 +758,7 @@ bdd RdPBDD::CanonizeR(bdd s, unsigned int i)
    		bdd reached = s2;
    		do
    		{
-		  // cout<<"deuxieme boucle interne \n";
+		  // //cout<<"deuxieme boucle interne \n";
 		   itint++;
    		   front=StepForward(front) - reached;
    		   reached = reached | front;
@@ -794,7 +792,7 @@ bool RdPBDD::Set_Bloc(bdd &S) const
 	return ((S&Mt)!=bddfalse);
 		//BLOCAGE
 }
-/*-------------------------Set_Div() à revoir -----------------------------*/
+/*-------------------------Set_Div() Ã  revoir -----------------------------*/
 bool RdPBDD::Set_Div(bdd &S) const
 {
 	Set::const_iterator i;
@@ -834,12 +832,12 @@ bdd RdPBDD::FrontiereNodes1(bdd From, int t)
 	res=res | (From & relation[t].Precond);
     return res;
 }
-/*-------- Produit synchronisé à la volée de n graphes d'observation : Adaptation à la capture des séquences bloquantes et les séquences divergentes----------------------*/
+/*-------- Produit synchronisÃ© Ã  la volÃ©e de n graphes d'observation : Adaptation Ã  la capture des sÃ©quences bloquantes et les sÃ©quences divergentes----------------------*/
 void RdPBDD::GeneralizedSynchProduct1(Modular_Obs_Graph& Gv, int NbSubnets,RdPBDD* Subnets[] ,int nbbddvar) 
 {
-    cout<<"_____________  GeneralizedSynchProduct1  _________________________"<<NbSubnets<<"sous-reseaux "<<endl;
+    //cout<<"_____________  GeneralizedSynchProduct1  _________________________"<<NbSubnets<<"sous-reseaux "<<endl;
     //for(int k=0;k<NbSubnets;k++)
-    //	cout<<*Subnets[k]<<endl;
+    //	//cout<<*Subnets[k]<<endl;
    int pos_trans(TRANSITIONS,string);
    TabMeta=new bdd[1000000];
    nbmetastate=0;
@@ -954,30 +952,30 @@ void RdPBDD::GeneralizedSynchProduct1(Modular_Obs_Graph& Gv, int NbSubnets,RdPBD
 		    pos->Predecessors.insert(pos->Predecessors.begin(),Modular_Edge(e.first.first,tmp));
 		    Gv.addArc();
 		    delete Meta_State;
-		    //Neoud déja rencontré ;
+		    //Neoud dÃ©ja rencontrÃ© ;
 		  }
 		}
 	  }
 	}
      }while(!st.empty());
-   cout<<" MAXIMAL INTERMEDIARY BDD SIZE \n"<<MaxIntBdd<<endl;
-   cout<<"OLD SIZE : "<<bdd_anodecount(TabMeta,nbmetastate)<<endl;
-   cout<<"NB SHARED NODES : "<<bdd_anodecount(TabMeta,nbmetastate)<<endl;
-   cout<<"NB META STATE DANS CONSTRUCTION : "<<nbmetastate<<endl;
-   cout<<"NB ITERATIONS CONSTRUCTION : "<<NbIt<<endl;
-   cout<<"NB ITERATIONS EXTERNES : "<<itext<<endl;
-   cout<<"NB ITERATIONS INTERNES : "<<itint<<endl;
+   //cout<<" MAXIMAL INTERMEDIARY BDD SIZE \n"<<MaxIntBdd<<endl;
+   //cout<<"OLD SIZE : "<<bdd_anodecount(TabMeta,nbmetastate)<<endl;
+   //cout<<"NB SHARED NODES : "<<bdd_anodecount(TabMeta,nbmetastate)<<endl;
+   //cout<<"NB META STATE DANS CONSTRUCTION : "<<nbmetastate<<endl;
+   //cout<<"NB ITERATIONS CONSTRUCTION : "<<NbIt<<endl;
+   //cout<<"NB ITERATIONS EXTERNES : "<<itext<<endl;
+   //cout<<"NB ITERATIONS INTERNES : "<<itint<<endl;
 }
 /*------------------------EmersonLey ----------------------------*/
 bdd RdPBDD::EmersonLey(bdd S,bool trace) 
 {
-	cout<<"ICI EMERSON LEY \n";
+	//cout<<"ICI EMERSON LEY \n";
 	double		TpsInit, TpsDetect;
 	double debitext,finitext;
 	TpsInit = (double)(clock()) / CLOCKS_PER_SEC;
 	bdd b=S;
 	bdd Fair=bdd_ithvar(2*Nb_places-1);
-	cout<<"PLACE TEMOIN \n";
+	//cout<<"PLACE TEMOIN \n";
 	//cout<<places[places.size()-1].name<<endl;
 	bdd oldb;
 	bdd oldd,d;
@@ -990,10 +988,10 @@ bdd RdPBDD::EmersonLey(bdd S,bool trace)
 		if(trace)
 		{
 			
-			cout<<"ITERATION EXTERNES NUMERO :"<<extit<<endl;
+			//cout<<"ITERATION EXTERNES NUMERO :"<<extit<<endl;
 			debitext=(double)(clock()) / CLOCKS_PER_SEC;
-			cout<<"TAILLE DE B AVANT IT INTERNE : "<<bdd_nodecount(b)<<endl;
-			cout<<endl<<endl;
+			//cout<<"TAILLE DE B AVANT IT INTERNE : "<<bdd_nodecount(b)<<endl;
+			//cout<<endl<<endl;
 		}
 		oldb=b;
 		//cout<<"Fair : "<<Fair.id()<<endl;
@@ -1006,9 +1004,9 @@ bdd RdPBDD::EmersonLey(bdd S,bool trace)
 			if(trace)
 			{
 				
-				cout<<"ITERATION INTERNES NUMERO :"<<init<<endl;
-				cout<<"HEURE : "<<(double)(clock()) / CLOCKS_PER_SEC<<endl;
-				cout<<"TAILLE DE D : "<<bdd_nodecount(d)<<endl;
+				//cout<<"ITERATION INTERNES NUMERO :"<<init<<endl;
+				//cout<<"HEURE : "<<(double)(clock()) / CLOCKS_PER_SEC<<endl;
+				//cout<<"TAILLE DE D : "<<bdd_nodecount(d)<<endl;
 			}
 			oldd=d;
 			bdd inter=b & StepForward2(d);
@@ -1016,21 +1014,20 @@ bdd RdPBDD::EmersonLey(bdd S,bool trace)
 			d=d | inter;
 		}while(!(oldd==d));
 		if(trace)
-			cout<<"\nTAILLE DE D APRES ITs INTERNES : "<<bdd_nodecount(d)<<endl;
+			//cout<<"\nTAILLE DE D APRES ITs INTERNES : "<<bdd_nodecount(d)<<endl;
 		b=b & StepBackward2(d);
 		init++;
 		if(trace)
 		{
-			cout<<"\n\nTAILLE DE B APRES ELEMINER LES PRED DE D : "<<bdd_nodecount(b)<<endl;
+			//cout<<"\n\nTAILLE DE B APRES ELEMINER LES PRED DE D : "<<bdd_nodecount(b)<<endl;
 			finitext=(double)(clock()) / CLOCKS_PER_SEC;
-			cout<<"DUREE DE L'ITERATION EXTERNE NUMERO "<<extit<<"  :  "<<finitext-debitext<<endl;
-			cout<<endl<<"_________________________________________________\n\n";
+			//cout<<"DUREE DE L'ITERATION EXTERNE NUMERO "<<extit<<"  :  "<<finitext-debitext<<endl;
+			//cout<<endl<<"_________________________________________________\n\n";
 		}
 	}while(!(b==oldb));
-	cout<<"NOMBRE D'ITERATIONS EXTERNES -----:"<<extit<<endl;
-	cout<<"NOMBRE D'ITERATIONS INTERNES -----:"<<init<<endl;
+	//cout<<"NOMBRE D'ITERATIONS EXTERNES -----:"<<extit<<endl;
+	//cout<<"NOMBRE D'ITERATIONS INTERNES -----:"<<init<<endl;
 	TpsDetect = ((double)(clock()) / CLOCKS_PER_SEC) - TpsInit;
-	cout << "DETECTION DE CYCLE TIME  " << TpsDetect << endl;
+	//cout << "DETECTION DE CYCLE TIME  " << TpsDetect << endl;
 	return b;
 }
-
