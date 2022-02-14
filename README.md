@@ -25,6 +25,8 @@ In the paper we used the exemple file Samples/exemple.net.
 
 --- Exemple ------------------------------------------
 ------------------------------------------------------
+We treat the exemple of 2 dining philosophers.
+
 
 ----experimental result ----------------------------
 -----------------------------------------------------
