@@ -26,6 +26,7 @@ In the paper we used the exemple file Samples/exemple.net.
 --- Exemple ------------------------------------------
 ------------------------------------------------------
 We treat the exemple of 2 dining philosophers.
+The figure bellow represents the Petri net 
 
 
 ----experimental result ----------------------------
@@ -36,4 +37,4 @@ we evaluate the size of the reachability graph, the number of observed transitio
 and calculate the execution time for each example.
 We notice that the size of the reachability graph is increasing exponentially.
 The results are summarised in the attached table. 
-![comparative table](https://github.com/yasmineyasmiin/tool/blob/aa652032d329aee3811e473fe80f6a489c80bd38/comparatif.png)
+[comparative table](https://github.com/yasmineyasmiin/tool/blob/aa652032d329aee3811e473fe80f6a489c80bd38/comparatif.png)!
