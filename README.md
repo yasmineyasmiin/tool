@@ -28,7 +28,9 @@ In the paper we used the exemple file Samples/exemple.net.
 We treat the exemple of 2 dining philosophers.
 The figure bellow represents the Petri Net corresponding to 2 philosophers.
 [Petri Net](https://github.com/yasmineyasmiin/tool/blob/9bb5d1d34df70b787b81889110183ba6d3b5dbb9/philo2.png)
-  -Step1:Extract the set of unobservable transitions. For this exemple  
+  
+  -Step1: Extract the set of unobservable transitions using the pattern. For this exemple Unobs={GoEat0, GoLeft0, GoRight0, GoEat1, GoLeft1, GoRight1}.
+  -Step2: 
 
 
 
