@@ -26,8 +26,8 @@ In the paper we used the exemple file Samples/exemple.net.
 --- Exemple ------------------------------------------
 ------------------------------------------------------
 We treat the exemple of 2 dining philosophers.
-The figure bellow represents the Petri net corresponding to 2 philosophers.
-[comparative table](https://github.com/yasmineyasmiin/tool/blob/aa652032d329aee3811e473fe80f6a489c80bd38/comparatif.png)
+The figure bellow represents the Petri Net corresponding to 2 philosophers.
+[Petri Net](https://github.com/yasmineyasmiin/tool/blob/20d98662a3d10338a8bd9f418aee19cb756a8c74/philo2.png)
 
 
 
