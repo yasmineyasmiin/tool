@@ -28,9 +28,7 @@ In the paper we used the exemple file Samples/exemple.net.
 
 We treat the exemple of 2 dining philosophers.
 The figure bellow represents the Petri Net corresponding to 2 philosophers.
-![Petri Net](philo2.png)
 <p align="center">
-  <img src="your_relative_path_here" width="350" title="hover text">
   <img src="philo2.png" width="350" alt="accessibility text">
 </p>
 
