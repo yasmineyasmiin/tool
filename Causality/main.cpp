@@ -6,7 +6,7 @@
 #include <iomanip>
 
 #include <map>
-
+#include <cmath>
 #include <algorithm>
 
 using namespace std;
@@ -54,30 +54,7 @@ int main(int argc, char** argv) {
     MDGraph g;
 
     chemins= DR.chem_obs(g,obs);
- /*  cout << " n de chemins " << chemins.size() << endl;
-    for (auto i: chemins)
-    {   cout << " le chemin : "  << endl;
-        for (auto k:i){
-            cout <<"t"<< k+1  << endl;
-            }
-    }*/
-
-
  
-
-/*for(auto i:g.GONodes)
-{
-cout<<"le noeud num "<<i->class_state.id()<<" a comme succ: "<<endl;
-    for(auto k: i->Successors){
-        cout<<"**t"<<k.second+1<<" jusqu'a "<<k.first->class_state.id()<<endl;
-        }
-                cout<<"**"<<endl;
-}
-  
- 
- 
-*/
-
  for (auto i: chemins)
  {
  // cout<< "---un nouv chem----"<<endl;
@@ -85,37 +62,9 @@ cout<<"le noeud num "<<i->class_state.id()<<" a comme succ: "<<endl;
   chem_abs= DR.chem_abs(i,g);
   
   abstrait.insert(chem_abs); }
-/*  
-  cout<< "************************ ********************** ************************"<<endl;
-  cout<< "************************ ********************** ************************"<<endl; 
-   cout<< "************************    FINAL RESULT      ************************"<<endl;
-cout<<"                                                               "<<endl;
-cout<<"                                                               "<<endl;
+
   
-cout<< "************************ observable transitions   ************************"<<endl;
-  for(auto i:obs)
-  {
-  cout<<"t"<<i.first+1<<endl;
-  }
   
-  cout<< "************************ observable paths ************************"<<endl;
- }
- for (auto i: chemins)
- {
-  cout<< "--- observable path ----"<<endl;
-  for (auto tr:i)
-  cout<<"t"<<tr+1<<endl;
-  }
-  
-    cout<< "************************  abstract paths ************************"<<endl;
- for (auto i: abstrait)
- {
-  cout<< "--- abstract path ----"<<endl;
-  for (auto tr:i)
-  cout<<"t"<<tr+1<<endl;
-  
-  }*/
- 
  tps = getTime() - d;
 
    cout << " Temps de construction du graphe d'observation " << tps << endl;
@@ -123,12 +72,35 @@ cout<< "************************ observable transitions   **********************
   cout<< "transi "<<R.transitions.size()<<endl;
   cout<< "etat "<<R.places.size()<<endl;
     cout<< "trans obs "<<obs.size()<<endl;
+      cout<< "--- abstract path ----"<<endl;
+      set<int> visit;
+      float somme =0 ;
+      float ecart=0; 
   for (auto i: abstrait)
  {
-  cout<< "--- abstract path ----"<<endl;
+cout<<"--"<<endl;
   for (auto tr:i)
-  cout<<"t"<<tr+1;
-  
+   {
+   visit.insert(tr);
+   cout<< R.transitions[tr].name<<endl;
+     }
+
+     somme=somme+i.size();
+     
   }
+float moy= somme/(abstrait.size());
+cout<< "nb moyen de transitions par chemin: "<<moy<<endl;
+
+    
+for (auto i: abstrait)
+ {
+
+ecart = ecart+ (((i.size()-moy)*(i.size()-moy))); 
+
+     
+  }
+
+    ecart =pow((ecart/abstrait.size()),0.5);
+    cout<< "ecart type: "<<ecart<<endl;
 	return 0;
  }
