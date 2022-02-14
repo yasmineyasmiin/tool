@@ -1,7 +1,6 @@
 # code_source
 From the description of Petri net this code is able to generate the observable paths then the abstract paths.
 
----------------------------------------------------------------------
 --- REQUIREMENTS ----------------------------------------------------
 ---------------------------------------------------------------------
 
@@ -9,7 +8,6 @@ From the description of Petri net this code is able to generate the observable p
 * A machine that supports 32 bit integers.
 
 
----------------------------------------------------------------------
 --- USE -----------------------------------------------------------
 ---------------------------------------------------------------------
 
@@ -25,9 +23,11 @@ from its description file  "file.net".
 -To run this executable on any exemple we hava to access the main directory and execute the command "./StructAnalysis ./Samples/file.net" 
 In the paper we used the exemple file Samples/exemple.net.
 
---------------- Exemple ------------------------------------------
+--- Exemple ------------------------------------------
+------------------------------------------------------
 
------------------- experimental result ----------------------------
+----experimental result ----------------------------
+-----------------------------------------------------
 
 we have applied our approach to the Dining philosophers problem by varying each time the number of philosophers (2,3...100 phiilosophers).
 we evaluate the size of the reachability graph, the number of observed transitions , the number of aggregates found by applying our tool 
