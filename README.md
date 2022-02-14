@@ -28,6 +28,7 @@ In the paper we used the exemple file Samples/exemple.net.
 --------------- Exemple ------------------------------------------
 
 ------------------ experimental result ----------------------------
+
 we have applied our approach to the Dining philosophers problem by varying each time the number of philosophers (2,3...100 phiilosophers).
 we evaluate the size of the reachability graph, the number of observed transitions , the number of aggregates found by applying our tool 
 and calculate the execution time for each example.
