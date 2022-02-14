@@ -28,13 +28,18 @@ In the paper we used the exemple file Samples/exemple.net.
 
 We treat the exemple of 2 dining philosophers.
 The figure bellow represents the Petri Net corresponding to 2 philosophers.
-![Petri Net](https://github.com/yasmineyasmiin/tool/blob/9bb5d1d34df70b787b81889110183ba6d3b5dbb9/philo2.png)
+![Petri Net](philo2.png)
+<p align="center">
+  <img src="your_relative_path_here" width="350" title="hover text">
+  <img src="philo2.png" width="350" alt="accessibility text">
+</p>
+
   
   *Step1: Extract the set of unobservable transitions using the pattern. For this exemple Unobs={GoEat0, GoLeft0, GoRight0, GoEat1, GoLeft1, GoRight1}.
   *Step2: Deduce the set of observable transitions. Obs={Release0, Release1}.
   *Step3: Build the SOG (Symbolic Observation Graph) starting from the Petri Net and the set of observable transitions and build the observable paths on the fly. We get the set of observed paths {<Release0>,<Release1>}.
   *Step4: Complete the Observable paths by unobservable transitions by making backtracking in each aggregate.
-  The final result for this example is the set of abstract paths (complete paths): { <GoEat0 GoRight0 GoLeft0 Release0>,<GoEat1 GoRight1 GoLeft1 GoEat0 Release1>}
+  The final result for this example is the set of abstract paths (complete paths): {<GoEat0 GoRight0 GoLeft0 Release0>,<GoEat1 GoRight1 GoLeft1 GoEat0 Release1>}
 
 
 ----Experimental result ----------------------------
@@ -45,5 +50,5 @@ we evaluate the size of the reachability graph, the number of observed transitio
 and calculate the execution time for each example.
 We notice that the size of the reachability graph is increasing exponentially.
 The results are summarised in the attached table. 
-[comparative table](https://github.com/yasmineyasmiin/tool/blob/aa652032d329aee3811e473fe80f6a489c80bd38/comparatif.png)
+![comparative table](https://github.com/yasmineyasmiin/tool/blob/aa652032d329aee3811e473fe80f6a489c80bd38/comparatif.png)
 
