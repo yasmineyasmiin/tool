@@ -25,18 +25,20 @@ In the paper we used the exemple file Samples/exemple.net.
 
 --- Exemple ------------------------------------------
 ------------------------------------------------------
+
 We treat the exemple of 2 dining philosophers.
 The figure bellow represents the Petri Net corresponding to 2 philosophers.
 [Petri Net](https://github.com/yasmineyasmiin/tool/blob/9bb5d1d34df70b787b81889110183ba6d3b5dbb9/philo2.png)
   
-  -Step1: Extract the set of unobservable transitions using the pattern. For this exemple Unobs={GoEat0, GoLeft0, GoRight0, GoEat1, GoLeft1, GoRight1}.
-  -Step2: 
+  *Step1: Extract the set of unobservable transitions using the pattern. For this exemple Unobs={GoEat0, GoLeft0, GoRight0, GoEat1, GoLeft1, GoRight1}.
+  *Step2: Deduce the set of observable transitions. Obs={Release0, Release1}.
+  *Step3: Build the SOG (Symbolic Observation Graph) starting from the Petri Net and the set of observable transitions and build the observable paths on the fly. We get the set of observed paths {<Release0>,<Release1>}.
+  *Step4: Complete the Observable paths by unobservable transitions by making backtracking in each aggregate.
+  The final result for this example is the set of abstract paths (complete paths)
 
 
-
-
-----experimental result ----------------------------
------------------------------------------------------
+----Experimental result ----------------------------
+----------------------------------------------------
 
 we have applied our approach to the Dining philosophers problem by varying each time the number of philosophers (2,3...100 phiilosophers).
 we evaluate the size of the reachability graph, the number of observed transitions , the number of aggregates found by applying our tool 
