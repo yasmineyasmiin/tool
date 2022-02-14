@@ -34,7 +34,7 @@ The figure bellow represents the Petri Net corresponding to 2 philosophers.
   *Step2: Deduce the set of observable transitions. Obs={Release0, Release1}.
   *Step3: Build the SOG (Symbolic Observation Graph) starting from the Petri Net and the set of observable transitions and build the observable paths on the fly. We get the set of observed paths {<Release0>,<Release1>}.
   *Step4: Complete the Observable paths by unobservable transitions by making backtracking in each aggregate.
-  The final result for this example is the set of abstract paths (complete paths)
+  The final result for this example is the set of abstract paths (complete paths).{<Release0>,<Release1>}
 
 
 ----Experimental result ----------------------------
