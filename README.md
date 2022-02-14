@@ -29,7 +29,7 @@ In the paper we used the exemple file Samples/exemple.net.
 We treat the exemple of 2 dining philosophers.
 The figure bellow represents the Petri Net corresponding to 2 philosophers.
 <p align="center">
-  <img src="philo2.png" width="350" alt="petri net">
+  <img src="philo2.png" width="450" alt="petri net">
 </p>
 
   
