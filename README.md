@@ -4,7 +4,7 @@ From the description of Petri net this code is able to generate the observable p
 --- REQUIREMENTS ----------------------------------------------------
 ---------------------------------------------------------------------
 
-* A (not to old) C++ compiler..
+* A C++ compiler.
 * A machine that supports 32 bit integers.
 
 
