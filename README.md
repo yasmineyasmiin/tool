@@ -49,6 +49,6 @@ and calculate the execution time for each example.
 We notice that the size of the reachability graph is increasing exponentially.
 The results are summarised in the attached table. 
 <p align="center">
-  <img src="conparatif.png" width="350" alt="comparative table">
+  <img src="comparatif.png" width="350" alt="comparative table">
 </p>
 
