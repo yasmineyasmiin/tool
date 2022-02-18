@@ -43,11 +43,9 @@ The figure bellow represents the Petri Net corresponding to 2 philosophers.
 ----Experimental result ----------------------------
 ----------------------------------------------------
 
-we have applied our approach to the Dining philosophers problem by varying each time the number of philosophers (2,3...100 phiilosophers).
-we evaluate the size of the reachability graph, the number of observed transitions , the number of aggregates found by applying our tool 
-and calculate the execution time for each example.
-We notice that the size of the reachability graph is increasing exponentially.
-The results are summarised in the attached table. 
+We have applied our approach to the Dining philosophers problem by varying the number of philosophers each time (2,3...100 philosophers).
+We evaluate the size of the reachability graph, the number of observed transitions , the number of aggregates found by applying our tool and calculate the execution time for each example.
+We notice that the size of the reachability graph is increasing exponentially. The results are summarised in the attached table.
 <p align="center">
   <img src="comparatif.png" width="600" alt="comparative table">
 </p>
