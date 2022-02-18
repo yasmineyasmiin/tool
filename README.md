@@ -9,17 +9,16 @@ From the description of Petri net this code is able to generate the observable p
 --- USE -----------------------------------------------------------
 ---------------------------------------------------------------------
 
-To compile this collection of code you have to: 
--First,run the "make" command inside of the directory "buddy22" this will create/update the library libbdd.a
-this directory includes the library of Binary Decision Diagrams.
+To compile this collection of code you have to:
 
--Second, run  "make" in the "parser" diractory \\ this directory is responsible for the creation of the  Petri net
-from its description file  "file.net".
+-First,run the "make" command inside of the directory "buddy22". This will create/update the library libbdd.a this directory includes the library of Binary Decision Diagrams.
 
--Then, you run the "make" command in the principal diretory  to generate the executable file  "StructAnalysis".
+-Second, run  "make" in the "parser" directory, this directory is responsible for the creation of the  Petri net from its description file  "file.net".
 
--To run this executable on any exemple we hava to access the main directory and execute the command "./StructAnalysis ./Samples/file.net" 
-In the paper we used the exemple file Samples/exemple.net.
+-Then, you run the "make" command in the  main directory  to generate the executable file  "StructAnalysis".
+
+-To run this executable on any example, we have to access the main directory and execute the command "./StructAnalysis ./Samples/file.net" for the paper we used the example file Samples/exemple.net.
+
 
 --- Exemple ------------------------------------------
 ------------------------------------------------------
