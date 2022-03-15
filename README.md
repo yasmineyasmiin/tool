@@ -1,4 +1,4 @@
-# code_source
+# Tool for Symbolic Observation Graph-Based Generation of Test Paths
 From the description of Petri net this code is able to generate the observable paths then the abstract paths.
 
 --- REQUIREMENTS ----------------------------------------------------
